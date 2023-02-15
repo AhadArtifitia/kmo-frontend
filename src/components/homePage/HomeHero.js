@@ -70,10 +70,11 @@ const HomeHero = () => {
                         (<FaTimes size={20} style={{ color:'#fff' }} />) : (<FaBars size={20} style={{ color:'#fff' }} />)
                 }
             </div>
-            <div className='home-hero-title'>
-                <h5>Welcome to</h5>
-                <h2>KMO <br /> GROUPS</h2>
-            </div>
+            
+        </div>
+        <div className='home-hero-title'>
+            <h5>Welcome to</h5>
+            <h2>KMO <br /> GROUPS</h2>
         </div>
     </div>
   )

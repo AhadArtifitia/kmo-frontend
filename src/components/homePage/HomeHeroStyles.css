@@ -33,6 +33,7 @@
     position: absolute;
     width: 100%;
     top: 0;
+    padding: 0 9vw;
 }
 
 .home-hero-logo {
@@ -49,7 +50,7 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
-    margin-left: -4rem;
+    margin-left: -3rem;
 }
 
 .home-hero-nav li a {

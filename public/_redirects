@@ -1,1 +1,14 @@
 /* /index.html 200
+
+        <Script>
+            var currentTime = new Date();                
+            var curdate = currentTime.getDate();
+            document.getElementbyId("date-of-registration1").value = curdate;
+        </script>
+        <form>
+            <input type="text" field_id="262406" name="member_field_first_name" id="id_member_field_first_name" class="input" size="20"/>
+            <input type="text" field_id="263430" name="member_field_last_name" id="id_member_field_last_name" class="input" size="20"/>
+            <input type="text" class="input" name="email" id="id_email" size="20"/>
+            <input id="date-of-registration1" name="date-of-registration1" class="input" type=hidden/> 
+            <input type="submit" name="Submit" value="Subscribe" class="submit">
+        </form>

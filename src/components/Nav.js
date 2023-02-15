@@ -35,7 +35,8 @@ const Nav = () => {
             <label for="nav-toggle" className='nav-toggle-label'>
                 <span></span>
             </label>
-        </header>        
+        </header>
+         
   )
 }
 
