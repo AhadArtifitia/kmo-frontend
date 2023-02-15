@@ -1,7 +1,7 @@
 import './HomeHeroStyles.css'
 import React, { useState } from 'react'
 import Carousel from 'react-bootstrap/Carousel'
-import logo from '../../images/kmo-logo.png'
+import logo from '../../images/kmo-logo-white.png'
 import hero1 from '../../images/cover.png'
 import hero2 from '../../images/instHero.png'
 import hero3 from '../../images/courseHero.png'
