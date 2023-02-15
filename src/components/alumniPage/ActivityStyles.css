@@ -1,0 +1,54 @@
+.activity {
+    background-color: white;
+    padding: 7vw;
+    display: flex;
+}
+
+.activity-content {
+    max-width: 50%;
+    padding: 1rem;
+}
+
+.activity-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    padding: 1rem;
+}
+
+.activity-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (min-width:1600px) {
+
+    .activity-content h2 {
+        font-size: 3.8vw;
+    }
+
+    .activity-content p {
+        font-size: 1.3vw;
+    }
+
+    .activity-img {
+        width: 100%;
+    }
+
+    
+}
+
+@media screen and (max-width: 900px) {
+    .activity {
+        flex-direction: column;
+    }
+
+    .activity-img{
+        max-width: 100%;
+    }
+
+    .activity-content {
+        max-width: 100%;
+    }
+}

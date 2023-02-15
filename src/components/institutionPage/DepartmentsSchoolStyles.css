@@ -1,0 +1,60 @@
+.departments-school {
+    padding: 7vw;
+    background-color: var(--themeColor);
+    display: flex;
+}
+
+.departments-school-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.departments-school-img img {
+    max-width: 60%;
+    height: auto;
+}
+
+.departments-school-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.departments-school-content-list {
+    display: flex;
+}
+
+@media screen and (min-width:1600px) {
+    .departments-school-content h2{
+        font-size: 3.8vw;
+    }
+
+    .departments-school-content p{
+        font-size: 1.3vw;
+    }
+
+    .departments-school-content-list ul li{
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .departments-school {
+        flex-direction: column;
+    }
+
+    .departments-school-content {
+        max-width: 100%;
+    }
+
+    .departments-school-img {
+        width: 100%;
+    }
+
+    .departments-school-img img {
+        max-width: 70%;
+    }
+}

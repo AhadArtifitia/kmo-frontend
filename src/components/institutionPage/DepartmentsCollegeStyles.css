@@ -1,0 +1,60 @@
+.departments-college {
+    padding: 7vw;
+    background-color: var(--themeColor);
+    display: flex;
+}
+
+.departments-college-img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.departments-college-img img {
+    max-width: 60%;
+    height: auto;
+}
+
+.departments-college-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.departments-college-content-list {
+    display: flex;
+}
+
+@media screen and (min-width:1600px) {
+    .departments-college-content h2{
+        font-size: 3.8vw;
+    }
+
+    .departments-college-content p{
+        font-size: 1.3vw;
+    }
+
+    .departments-college-content-list ul li{
+        font-size: 1.3vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .departments-college {
+        flex-direction: column;
+    }
+
+    .departments-college-content {
+        max-width: 100%;
+    }
+
+    .departments-college-img {
+        width: 100%;
+    }
+
+    .departments-college-img img {
+        max-width: 70%;
+    }
+}

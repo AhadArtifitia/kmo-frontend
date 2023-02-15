@@ -1,0 +1,15 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --themeColor: #003B7B;
+  --overlayColor: rgba(0, 59, 123, 0.6);
+}
+
+body {
+  background-color: white;
+}

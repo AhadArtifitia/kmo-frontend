@@ -1,0 +1,16 @@
+.faculty-header {
+    background-color: white;
+    padding: 7vw;
+}
+
+@media screen and (min-width:1600px) {
+
+    .faculty-header h2 {
+        font-size: 3.8vw;
+    }
+
+    .faculty-header p {
+        font-size: 1.3vw;
+    }
+    
+}

@@ -1,0 +1,58 @@
+.school {
+    background-color: white;
+    padding: 7vw;
+}
+
+.school-header {
+    background-color: var(--themeColor);
+    color: white;
+    padding: 1rem;
+}
+
+.school-body {
+    padding: 1rem;
+    display: flex;
+}
+
+.school-content {
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.school-img {
+    display: flex;
+    justify-content: center;
+    min-width: 50%;
+
+}
+
+.school-body img {
+    max-width: 100%;
+    max-height: 50vh;
+}
+
+@media screen and (min-width:1600px) {
+    .school-header h2 {
+        font-size: 3.8vw;
+    }
+
+    .school-body p {
+        font-size: 1.3vw;
+    }
+
+    .school-body h4 {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .school-body {
+        flex-direction: column;
+    }
+
+    .school-content {
+        max-width: 100%;
+    }    
+}

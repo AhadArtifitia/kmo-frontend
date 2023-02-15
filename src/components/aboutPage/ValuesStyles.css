@@ -1,0 +1,96 @@
+.section-4 {
+    background-color: white;
+    padding: 7vw;
+}
+
+.section-4 h2 {
+    font-size: 3.8vw;
+}
+
+.section-4 p {
+    font-size: 1.3vw;
+}
+
+.section-4 h5{
+    font-size: 1.6vw;
+}
+
+.values {
+    display: flex;
+}
+
+.values-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50%;
+    height: auto;
+}
+
+.values-right img {
+    max-height: 70vh;
+}
+
+.core-values {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 1300px) {
+    .values img {
+        max-height: 80vh;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .values img {
+        max-width: 100%;
+        max-height: 70vh;
+    }
+}
+
+
+@media screen and (max-width: 800px) {
+    .values {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .values img {
+        width: auto;
+        height: 30vh;
+    }
+}    
+
+@media screen and (max-width: 900px) {
+
+    .section-4 h2 {
+        font-size: 4.2vw;
+    }
+    
+    .section-4 p {
+        font-size: 1.8vw;
+    }
+    
+    .section-4 h5{
+        font-size: 2vw;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .section-4 h2 {
+        font-size: 5vw;
+    }
+    
+    .section-4 p {
+        font-size: 3vw;
+    }
+    
+    .section-4 h5{
+        font-size: 2.6vw;
+    }
+    
+    
+}

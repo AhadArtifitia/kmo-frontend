@@ -1,0 +1,19 @@
+.oppertunities {
+    background-color: white;
+    padding: 0 7vw;
+    padding-bottom: 7vw;
+}
+
+
+@media screen and (min-width:1600px) {
+
+    .oppertunities p {
+        font-size: 1.3vw;
+    }
+
+    .oppertunities a {
+        font-size: 1.3vw;
+    }
+    
+}
+

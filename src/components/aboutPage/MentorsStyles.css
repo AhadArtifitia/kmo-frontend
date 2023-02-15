@@ -1,0 +1,78 @@
+.section-2 {
+    padding: 7vw;
+}
+
+.mentors, .about {
+    background-color: white;
+    padding: 1rem;
+}
+
+.section-2 h2 {
+    font-size: 3.8vw;
+}
+
+.about p {
+    font-size: 1.3vw;
+}
+
+.mentor-card p {
+    font-size: 1vw;
+}
+
+.mentor-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.mentor-card {
+    position: relative;
+}
+
+.mentor-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.mentor-details {
+    background-color: white;
+    text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+    .mentor-container {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .section-2 h2 {
+        font-size: 4.2vw;
+    }
+    
+    .about p {
+        font-size: 1.8vw;
+    }
+    
+    .mentor-card p {
+        font-size: 1.5vw;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .section-2 h2 {
+        font-size: 5vw;
+    }
+
+    .about p {
+        font-size: 3vw;
+    }
+    
+    .mentor-card p {
+        font-size: 2.7vw;
+    }
+   
+}

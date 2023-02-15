@@ -1,0 +1,136 @@
+.institutions {
+    background-color: white;
+    padding: 9vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.institutions-top {
+    display: flex;
+    gap: 2rem;
+}
+
+.institutions-title {
+    padding-right: 3rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 5rem;
+}
+
+.institutions-title h2 {
+    font-size: 3.8vw;
+}
+
+.institutions-title p {
+    font-size: 1.3vw;
+}
+
+.institutions-img {
+    position: relative;
+    width: 50%;
+}
+
+.institutions-img img {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.institutions-img .institutions-img-overlay {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.institutions-bottom {
+    display: flex;
+    gap: 2rem;
+}
+
+.institutions-img-overlay {
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--overlayColor);
+    color: #fff;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+
+.institutions-img-overlay:hover{
+    opacity: 1;
+}
+
+.institutions-img-overlay h5{
+    font-size: 1.5vw;
+}
+
+.institutions-img-overlay p{
+    font-size: 1.5vw;
+}
+
+@media screen and (max-width: 1000px) {
+    .institutions-top {
+        flex-direction: column;
+    }
+
+    .institutions-bottom {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .institutions-img .institutions-img-overlay {
+        width: 100%;
+    }
+
+    .institutions-img-overlay {
+        padding: 1rem;
+    }
+
+    .institutions-img-overlay h5{
+        font-size: 3vw;
+    }
+
+    .institutions-img-overlay p{
+        font-size: 3vw;
+    }
+
+    .institutions-img img {
+        width: 100%;
+    }
+
+    .institutions-img, .institutions-title {
+        width: 100%;
+    }
+
+    .institutions-title {
+        padding-right: 0;
+    }
+
+    .institutions-title h2 {
+        font-size: 4.4vw;
+    }
+
+    .institutions-title p {
+        font-size: 1.9vw;
+    }
+    
+}
+
+@media screen and (max-width: 700px) {
+    .institutions-title h2 {
+        font-size: 4.8vw;
+    }
+
+    .institutions-title p {
+        font-size: 2.3vw;
+    }
+}

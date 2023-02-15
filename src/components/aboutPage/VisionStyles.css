@@ -1,0 +1,44 @@
+.section-3 {
+    background-color: var(--themeColor);
+    color: white;
+    display: flex;
+    padding: 7vw;
+}
+
+.section-3 h2 {
+    font-size: 3.8vw;
+}
+
+.section-3 p {
+    font-size: 1.3vw;
+}
+
+@media screen and (max-width: 800px) {
+    .section-3 {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .section-3 h2 {
+        font-size: 4.2vw;
+    }
+    
+    .section-3 p {
+        font-size: 1.8vw;
+    }
+    
+}
+
+@media screen and (max-width: 500px) {
+
+    .section-3 h2 {
+        font-size: 5vw;
+    }
+    
+    .section-3 p {
+        font-size: 3vw;
+    }
+}

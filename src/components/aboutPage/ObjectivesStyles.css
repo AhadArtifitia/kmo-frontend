@@ -1,0 +1,76 @@
+.objectives {
+    background-color: white;
+    display: flex;
+    padding: 0 7vw;
+    padding-bottom: 7vw;
+    width: 100%;
+}
+
+.objectives-left {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.objectives-left img {
+    max-width: 60%;
+    height: auto;
+}
+
+.objectives-right {
+    width: 50%;
+}
+
+.objectives-right h2 {
+    font-size: 3.8vw;
+}
+
+.objectives-right p {
+    font-size: 1.3vw;
+}
+
+@media screen and (min-width: 1500px) {
+    .objectives-left img {
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .objectives {
+        flex-direction: column;
+    }
+
+    .objectives-right {
+        width: 100%;
+    }
+
+    .objectives-left {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    .objectives-right h2 {
+        font-size: 4.2vw;
+    }
+    
+    .objectives-right p {
+        font-size: 1.8vw;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    .objectives-right h2 {
+        font-size: 5vw;
+    }
+    
+    .objectives-right p {
+        font-size: 3vw;
+    }
+    
+}

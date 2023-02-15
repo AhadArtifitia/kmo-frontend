@@ -1,0 +1,117 @@
+.academic {
+    background-color: var(--themeColor);
+    padding: 9vw;
+}
+
+.academic-body {
+    color: white;
+}
+
+.academic-body h2 {
+    font-size: 3.8vw;
+}
+
+.academic-body,.academic-card p {
+    font-size: 1.3vw;
+}
+
+.academic-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1.6vw;
+}
+
+.academic-section .academic-btn {
+    color: white;
+    background-color: var(--themeColor);
+    border: none;
+    width: 18vw;
+    height: 5vh;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.academic-section .academic-btn:hover {
+    color: #003B7B;
+    background-color: white;
+}
+
+.academic-card-container {
+    padding: 1rem;
+    color: white;
+    display: flex;
+    gap: 2rem;
+}
+
+.academic-card {
+    width: 30vw;
+    height: 19vh;
+    padding: 1rem;
+    border: #fff;
+    border-style: solid;
+    border-radius: 10px;
+    position: relative;
+}
+
+.aca-button {
+    position: absolute;
+    top: 63%;
+    background-color: #D9D9D9;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 1.3vw;
+    padding: 5px 24px;
+    min-width: 40%;
+    height: 5vh;
+}
+
+@media screen and (max-width: 900px) {
+    .academic-body h2 {
+        font-size: 4.2vw;
+    }
+    
+    .academic-body,.academic-card p {
+        font-size: 1.8vw;
+    }
+    
+    .academic-section {
+        font-size: 2.1vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .academic-card-container {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .academic-card {
+        min-width: 100%;
+    }
+
+    .academic-section .academic-btn {
+        width: 30vw;
+    }
+
+    .academic-body h2 {
+        font-size: 4.7vw;
+    }
+    
+    .academic-body p {
+        font-size: 2.3vw;
+    }
+
+    .academic-card p {
+        font-size: 2.5vw;
+    }
+    
+    .academic-section {
+        font-size: 2.6vw;
+    }
+
+    .aca-button {
+        font-size: 2.5vw;
+    }
+}

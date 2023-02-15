@@ -1,0 +1,27 @@
+.fee-structure {
+    background-color: white;
+    padding: 0 7vw;
+    padding-bottom: 7vw;
+}
+
+.fee-structure-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fee-body-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (min-width:1600px) {
+
+    .fee-structure h2 {
+        font-size: 3.8vw;
+    }
+
+    .fee-structure p {
+        font-size: 1.3vw;
+    }
+    
+}

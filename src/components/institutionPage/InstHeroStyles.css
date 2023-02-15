@@ -1,0 +1,46 @@
+.inst-mask {
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+}
+
+.inst-img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.inst-mask::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--overlayColor);
+    opacity: 0.8;
+}
+
+.inst-content {
+    color: white;
+    position: relative;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.inst-content h2 {
+    font-weight: 700;
+    font-size: 5vw;
+}
+
+@media screen and (max-width:700px) {
+    .inst-content h2 {
+        font-weight: 700;
+        font-size: 7vw;
+    }
+}
