@@ -21,23 +21,23 @@ const SideNav = () => {
             </li>
             <li>
                 <RiBook3Line size={25} className='side-nav-logo' />
-                <Link to='#'>Departments</Link>
+                <Link to='/admin/department'>Departments</Link>
             </li>
             <li>
                 <BiBookContent size={25} className='side-nav-logo' />
-                <Link to='#'>Course</Link>
+                <Link to='/admin/course'>Course</Link>
             </li>
             <li>
                 <RiSuitcaseLine size={25} className='side-nav-logo' />
-                <Link to='#'>Career</Link>
+                <Link to='/admin/career'>Career</Link>
             </li>
             <li>
                 <RiMedal2Line size={25} className='side-nav-logo' />
-                <Link to='#'>Events</Link>
+                <Link to='/admin/event'>Events</Link>
             </li>
             <li>
                 <HiOutlinePhotograph size={25} className='side-nav-logo' />
-                <Link to='#'>Banner</Link>
+                <Link to='/admin/banner'>Banner</Link>
             </li>
         </ul>
         <div className='side-nav-hamburger' onClick={ handleClick }>

@@ -1,0 +1,99 @@
+.admin-department-list-container {
+    width: 75vw;
+    height: 64vh;
+    position: absolute;
+    top: 36vh;
+    right: 0;
+}
+
+.admin-department-list {
+    padding: 3vw 7vw;
+    width: 100%;
+}
+
+.admin-department-list table {
+    width: 100%;
+    border: 1px solid #dddddd;
+}
+
+.admin-department-list-thr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-department-list-tr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-department-list-td {
+    text-align: left;
+    width: 6vw;
+}
+
+.admin-department-list-th {
+    text-align: left;
+    width: 6vw;
+}
+
+.admin-department-list-logo {
+    margin-left: 0px;
+}
+
+.admin-department-list-logo-trash {
+    color: red;
+}
+
+.admin-department-list-thr3, .admin-department-list-thr2 {
+    display: none;
+}
+
+@media screen and (min-width:1600px) {
+    .admin-department-list-logo {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-department-list-logo-trash {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-department-list-th, .admin-department-list-td {        
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .admin-department-list-container {
+        width: 100vw;
+    }    
+}
+
+@media screen and (max-width:750px) {
+    .admin-department-list-thr {
+        display: none;
+    }
+
+    .admin-department-list-tr {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .admin-department-list-td {
+        width: 100%;
+        text-align: right;
+        position: relative;
+    }
+
+    .admin-department-list-td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+    }
+}
+

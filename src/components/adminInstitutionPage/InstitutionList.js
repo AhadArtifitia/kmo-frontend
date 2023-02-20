@@ -3,8 +3,6 @@ import React from 'react'
 import { CgProfile } from 'react-icons/cg'
 import { GrLocation } from 'react-icons/gr'
 import { BsTelephone, BsTrash } from 'react-icons/bs'
-import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
-import { MdLocationOn, MdDeleteForever } from 'react-icons/md'
 import { AiOutlineEye, AiOutlineFileAdd, AiOutlineMail } from 'react-icons/ai'
 
 const InstitutionList = () => {

@@ -1,0 +1,100 @@
+.admin-career-list-container {
+    width: 75vw;
+    height: 64vh;
+    position: absolute;
+    top: 36vh;
+    right: 0;
+}
+
+.admin-career-list {
+    padding: 3vw 7vw;
+    width: 100%;
+}
+
+.admin-career-list table {
+    width: 100%;
+    border: 1px solid #dddddd;
+}
+
+.admin-career-list-thr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-career-list-tr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-career-list-td {
+    text-align: left;
+    width: 10vw;
+}
+
+.admin-career-list-th {
+    text-align: left;
+    width: 10vw;
+}
+
+.admin-career-list-logo {
+    margin-left: 0px;
+}
+
+.admin-career-list-logo-trash {
+    color: red;
+}
+
+.admin-career-list-thr3, .admin-career-list-thr2 {
+    display: none;
+}
+
+@media screen and (min-width:1600px) {
+    .admin-career-list-logo {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-career-list-logo-trash {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-career-list-th, .admin-career-list-td {        
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .admin-career-list-container {
+        width: 100vw;
+    }    
+}
+
+@media screen and (max-width:750px) {
+    .admin-career-list-thr {
+        display: none;
+    }
+
+    .admin-career-list-tr {
+        flex-direction: column;
+        width: 100%;
+        
+    }
+
+    .admin-career-list-td {
+        width: 100%;
+        text-align: right;
+        position: relative;
+    }
+
+    .admin-career-list-td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+    }
+}
+

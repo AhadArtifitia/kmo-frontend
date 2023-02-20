@@ -18,6 +18,11 @@ import Gallery from './routes/Gallery';
 import English from './routes/English';
 import Login from './routes/admin/Login';
 import AdminInstitution from './routes/admin/AdminInstitution';
+import AdminCourse from './routes/admin/AdminCourse';
+import AdminCareer from './routes/admin/AdminCareer';
+import AdminEvents from './routes/admin/AdminEvents';
+import AdminBanner from './routes/admin/AdminBanner';
+import AdminDepartments from './routes/admin/AdminDepartments';
 
 
 function App() {
@@ -41,6 +46,12 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/admin/login' element={<Login />} />
         <Route path='/admin/institution' element={<AdminInstitution />} />
+        <Route path='/admin/course' element={<AdminCourse />} />
+        <Route path='/admin/career' element={<AdminCareer />} />
+        <Route path='/admin/event' element={<AdminEvents />} />
+        <Route path='/admin/banner' element={<AdminBanner />} />
+        <Route path='/admin/department' element={<AdminDepartments />} />
+
       </Routes>
     </>
   );
