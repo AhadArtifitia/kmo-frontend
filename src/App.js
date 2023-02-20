@@ -16,6 +16,8 @@ import Departments from './routes/Departments';
 import Fee from './routes/Fee';
 import Gallery from './routes/Gallery';
 import English from './routes/English';
+import Login from './routes/admin/Login';
+import AdminInstitution from './routes/admin/AdminInstitution';
 
 
 function App() {
@@ -37,6 +39,8 @@ function App() {
         <Route path='/departments' element={<Departments />} />
         <Route path='/feestructure' element={<Fee />} />
         <Route path='/gallery' element={<Gallery />} />
+        <Route path='/admin/login' element={<Login />} />
+        <Route path='/admin/institution' element={<AdminInstitution />} />
       </Routes>
     </>
   );

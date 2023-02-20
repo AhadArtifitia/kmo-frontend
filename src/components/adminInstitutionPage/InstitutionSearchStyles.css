@@ -1,0 +1,123 @@
+.admin-institution-search-container {
+    width: 75vw;
+    height: 18vh;
+    position: absolute;
+    top: 18vh;
+    right: 0;
+}
+
+.admin-institution-search-container hr {
+    width: 80%;
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-attachment: fixed;
+}
+
+.admin-institution-search {
+    display: flex;
+    align-items: center;
+    padding: 0vw 7vw;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-search-input-btn {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.admin-add-inst-btn {
+    background-color: var(--themeColor);
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* width: 11vw; */
+    width: 180px;
+    height: 35px;
+}
+
+.admin-inst-search-box {
+    position: relative;
+}
+
+.admin-search-logo {
+    position: absolute;
+    top: 0.4rem;
+    left: 0.2rem;
+}
+
+.admin-inst-search-input {
+    background: white;
+    border: 1px solid var(--themeColor);
+    border-radius: 10px;
+    width: 180px;
+    padding: 5px 10px;
+    padding-left: 2rem;
+}
+
+@media screen and (min-width:1600px) {
+    .admin-institution-search h2{
+        font-size: 3vw;
+    }
+
+    .admin-search-logo {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-inst-search-input {
+        font-size: 1vw;
+        width: 250px;
+        height: 55px;
+        padding: 8px 14px;
+        padding-left: 2.7rem;
+    }
+
+    .admin-add-inst-btn {
+        font-size: 1vw;
+        padding: 8px 14px;
+        width: 200px;
+        height: 55px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .admin-institution-search-container {
+        width: 100vw;
+    }    
+}
+
+@media screen and (max-width:650px) {
+    .admin-inst-search-input {
+        width: 147px;
+        padding-left: 1.5rem;
+    }
+
+    .admin-add-inst-btn {
+        width: 145px;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .admin-institution-search {
+        padding: 5vw 7vw;
+    }
+    
+    .admin-institution-search {
+        flex-direction: column;
+    }
+
+    .admin-search-input-btn {
+        justify-content: center;
+    }
+
+    .admin-institution-search-container hr {
+        bottom: 0.8rem;
+    }
+}

@@ -1,0 +1,44 @@
+.admin-nav {
+    background-color: #E4E3E3;
+    height: 18vh;
+    width: 75vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.admin-nav-body {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 3rem;
+    padding-right: 1rem;
+}
+
+.admin-nav-logo {
+    color: var(--themeColor);
+}
+
+.admin-nav h5 {
+    color: var(--themeColor);
+}
+
+@media screen and (min-width:1600px) {
+    .admin-nav-logo {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-nav-body h5{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .admin-nav {
+        width: 100vw;
+    }
+
+    
+}
