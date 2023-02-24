@@ -20,3 +20,29 @@
     background-position: center;
     object-fit: cover;
 }
+
+.admin-banner-details {
+    display: flex;
+    justify-content: flex-end;
+    color: #A9A7A7;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+.admin-banner-images-logo {
+    color: #A9A7A7;
+}
+
+.admin-banner-details-eye {
+    display: flex;
+}
+
+.admin-banner-details-heart {
+    display: flex;
+}
+
+@media screen and (max-width:900px) {
+    .admin-banner-images-container {
+        width: 100vw;
+    }    
+}

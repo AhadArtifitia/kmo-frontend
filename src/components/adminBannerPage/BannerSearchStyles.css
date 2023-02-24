@@ -42,10 +42,19 @@
     height: 35px;
 }
 
+.admin-banner-logo-trash {
+    color: red;
+    margin-left: 1rem;
+}
 
 @media screen and (min-width:1600px) {
     .admin-banner-search h2{
         font-size: 3vw;
+    }
+
+    .admin-banner-logo-trash {
+        width: 2vw;
+        height: auto;
     }
 
     .admin-add-banner-btn {

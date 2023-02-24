@@ -1,5 +1,6 @@
 import './BannerSearchStyles.css'
 import React from 'react'
+import { BsTrash } from 'react-icons/bs'
 
 const BannerSearch = () => {
   return (
@@ -9,6 +10,7 @@ const BannerSearch = () => {
             <div className='admin-search-input-btn'>
                 <button className='admin-add-banner-btn'>Upload New</button>
             </div>
+            <BsTrash size={24} className='admin-banner-logo-trash' /> 
         </div>
         <hr />
     </div>
