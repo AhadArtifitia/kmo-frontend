@@ -2,7 +2,10 @@ import './InstitutionSearchStyles.css'
 import React from 'react'
 import { IoIosSearch } from 'react-icons/io'
 
-const InstitutionSearch = () => {
+const InstitutionSearch = ({setInstModal}) => {
+  function popModal() {
+    setInstModal(true)
+  }
   return (
     <div className='admin-institution-search-container'>
         <div className='admin-institution-search'>
@@ -12,7 +15,7 @@ const InstitutionSearch = () => {
                     <input className='admin-inst-search-input' type='text' name='search' placeholder='Search institute' />
                     <IoIosSearch size={24} className='admin-search-logo' />
                 </div>
-                <button className='admin-add-inst-btn'>Add Institute</button>
+                <button className='admin-add-inst-btn' onClick={popModal}>Add Institute</button>
             </div>
         </div>
         <hr />
