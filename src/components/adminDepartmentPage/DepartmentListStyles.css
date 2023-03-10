@@ -42,10 +42,12 @@
 
 .admin-department-list-logo {
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .admin-department-list-logo-trash {
     color: red;
+    cursor: pointer;
 }
 
 .admin-department-list-thr3, .admin-department-list-thr2 {

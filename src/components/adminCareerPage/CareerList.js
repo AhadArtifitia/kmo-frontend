@@ -3,7 +3,48 @@ import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 
-const CareerList = () => {
+const CareerList = ({careers, setUpdateCareerModal, setCareers, setFormValues, setDefaultValues}) => {
+    const token = localStorage.getItem('token')
+
+    const handleEditClick = (object) => {
+        fetch(`http://localhost:8000/api/admin/career/${object._id}`,{
+            method:'GET',
+            headers:{
+                'Authorization':`Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            setDefaultValues(data);
+            setFormValues(data);
+        })
+
+        setUpdateCareerModal(true)
+    }
+
+    const handleDeleteClick = (objId) => {
+        const confirmBox = window.confirm("Confirm to delete this Career?")
+        if (confirmBox === true) {
+            fetch(`http://localhost:8000/api/admin/career/${objId}`,{
+                method:'DELETE',
+                headers:{
+                    'Authorization':`Bearer ${token}`,
+                },
+            })
+            .then(response => {
+                // update table data
+                setCareers(prevState => {
+                    const updatedData = prevState.filter(row => row._id !== objId);
+                    return updatedData;
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        } 
+    }
+
   return (
     <div className='admin-career-list-container'>
         <div className='admin-career-list'>
@@ -16,42 +57,20 @@ const CareerList = () => {
                     <th className='admin-career-list-th'>UPDATED</th>
                     <th className='admin-career-list-th'>EDIT</th>
                 </tr>
-                <tr className='admin-career-list-tr'>
-                    <td className='admin-career-list-td' data-label='DEPARTMENT'>B.A</td>
-                    <td className='admin-career-list-td' data-label='JOB LEVEL'>Teaching</td>
-                    <td className='admin-career-list-td' data-label='JOB TYPE'>Permanent</td>
-                    <td className='admin-career-list-td' data-label='EXPERIENCE'>1 - 2 Years</td>
-                    <td className='admin-career-list-td' data-label='UPDATED'>01/01/2023</td>
-                    <td className='admin-career-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-career-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-career-list-logo' /> 
-                        <BsTrash size={24} className='admin-career-list-logo-trash' /> 
-                    </td>
-                </tr>
-                <tr className='admin-career-list-tr'>
-                    <td className='admin-career-list-td' data-label='DEPARTMENT'>HSS</td>
-                    <td className='admin-career-list-td' data-label='JOB LEVEL'>Teaching</td>
-                    <td className='admin-career-list-td' data-label='JOB TYPE'>Permanent</td>
-                    <td className='admin-career-list-td' data-label='EXPERIENCE'>1 - 2 Years</td>
-                    <td className='admin-career-list-td' data-label='UPDATED'>01/01/2023</td>
-                    <td className='admin-career-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-career-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-career-list-logo' /> 
-                        <BsTrash size={24} className='admin-career-list-logo-trash' /> 
-                    </td>
-                </tr>
-                <tr className='admin-career-list-tr'>
-                    <td className='admin-career-list-td' data-label='DEPARTMENT'>B.Sc</td>
-                    <td className='admin-career-list-td' data-label='JOB LEVEL'>Teaching</td>
-                    <td className='admin-career-list-td' data-label='JOB TYPE'>Permanent</td>
-                    <td className='admin-career-list-td' data-label='EXPERIENCE'>1 - 2 Years</td>
-                    <td className='admin-career-list-td' data-label='UPDATED'>01/01/2023</td>
-                    <td className='admin-career-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-career-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-career-list-logo' /> 
-                        <BsTrash size={24} className='admin-career-list-logo-trash' /> 
-                    </td>
-                </tr>
+                {careers.map((career,index)=>(
+                    <tr className='admin-career-list-tr'>
+                        <td className='admin-career-list-td' data-label='DEPARTMENT'>{career.department}</td>
+                        <td className='admin-career-list-td' data-label='JOB LEVEL'>{career.level}</td>
+                        <td className='admin-career-list-td' data-label='JOB TYPE'>{career.type}</td>
+                        <td className='admin-career-list-td' data-label='EXPERIENCE'>{career.experience}</td>
+                        <td className='admin-career-list-td' data-label='UPDATED'>{career.updated}</td>
+                        <td className='admin-career-list-td' data-label='EDIT'>
+                            <AiOutlineEye size={24} className='admin-career-list-logo' /> 
+                            <AiOutlineFileAdd size={24} onClick={() => handleEditClick(career)} className='admin-career-list-logo' /> 
+                            <BsTrash size={24} onClick={() => handleDeleteClick(career._id)} className='admin-career-list-logo-trash' /> 
+                        </td>
+                    </tr>
+                ))}
             </table>
         </div>
     </div>

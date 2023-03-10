@@ -1,29 +1,26 @@
-import './InstitutionAddModal.css'
+import './CareerAddModalStyles.css'
 import React from 'react'
 
-const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
+const CareerAddModal = ({setAddCareerModal, careers, setCareers}) => {
     const token = localStorage.getItem('token')
-
-    function closeModal() {
-        setInstModal(false)
-    }
-
+    
     const [formData, setFormData] = React.useState({
-        name: '',
-        phone: '',
-        email: '',
-        location: '',
+        department: '',
+        level: '',
+        type: '',
+        experience: '',
+        updated: '',
     });
 
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
-    
+
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('http://localhost:8000/api/admin/institution', {
+        fetch('http://localhost:8000/api/admin/career', {
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,
@@ -32,7 +29,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
           body: JSON.stringify(formData)
         })
         .then((res) => {
-            setObjects([...objects, formData]);
+            setCareers([...careers, formData]);
         })
         .then((res)=> {
             console.log(res)
@@ -42,9 +39,13 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
         })
         .catch(error => console.error(error));
 
-        setInstModal(false)
+        setAddCareerModal(false)
     };
-    
+
+    function popModal() {
+        setAddCareerModal(false)
+    }
+
   return (
     <div className='modalBackground'>
         <div className='modalContainer'>
@@ -52,36 +53,39 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
             <div className='modal-title'>
-                <h3>Add Institute</h3>
+                <h3>Add Career</h3>
             </div>
             <div className='modal-body'>
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
-                        Name:
-                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                        Department:
+                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Phone:
-                        <input className='modal-body-from-input' type="text" name="phone" onChange={handleChange} />
+                        Level:
+                        <input className='modal-body-from-input' type="text" name="level" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Email:
-                        <input className='modal-body-from-input' type="email" name="email" onChange={handleChange} />
+                        Type:
+                        <input className='modal-body-from-input' type="text" name="type" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Location:
-                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
+                        Experience:
+                        <input className='modal-body-from-input' type="text" name="experience" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
+                        Updated:
+                        <input className='modal-body-from-input' type="text" name="updated" onChange={handleChange} />
                     </label>
                     <div className='modal-footer'>
-                        <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={ closeModal } >Cancel</button>
+                        <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>
                         <button type="submit" className='modalFooter-btn'>Submit</button>
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
   )
 }
 
-export default InstitutionModal
+export default CareerAddModal

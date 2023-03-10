@@ -2,7 +2,11 @@ import './DepartmentSearchStyles.css'
 import React from 'react'
 import { IoIosSearch } from 'react-icons/io'
 
-const DepartmentSearch = () => {
+const DepartmentSearch = ({setAddDepModal}) => {
+  function popModal() {
+    setAddDepModal(true)
+  }
+
   return (
     <div className='admin-department-search-container'>
         <div className='admin-department-search'>
@@ -12,7 +16,7 @@ const DepartmentSearch = () => {
                     <input className='admin-department-search-input' type='text' name='search' placeholder='Search department' />
                     <IoIosSearch size={24} className='admin-search-logo' />
                 </div>
-                <button className='admin-add-department-btn'>Add department</button>
+                <button onClick={popModal} className='admin-add-department-btn'>Add department</button>
             </div>
         </div>
         <hr />

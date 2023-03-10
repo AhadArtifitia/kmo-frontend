@@ -3,7 +3,48 @@ import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 
-const CourseList = () => {
+const CourseList = ({courses, setUpdateCourseModal, setCourses, setFormValues, setDefaultValues}) => {
+    const token = localStorage.getItem('token')
+
+    const handleEditClick = (object) => {
+        fetch(`http://localhost:8000/api/admin/course/${object._id}`,{
+            method:'GET',
+            headers:{
+                'Authorization':`Bearer ${token}`,
+                'Content-Type': 'application/json'
+            },
+        })
+        .then(response => response.json())
+        .then(data => {
+            setDefaultValues(data);
+            setFormValues(data);
+        })
+
+        setUpdateCourseModal(true)
+    }
+
+    const handleDeleteClick = (objId) => {
+        const confirmBox = window.confirm("Confirm to delete this course?")
+        if (confirmBox === true) {
+            fetch(`http://localhost:8000/api/admin/course/${objId}`,{
+                method:'DELETE',
+                headers:{
+                    'Authorization':`Bearer ${token}`,
+                },
+            })
+            .then(response => {
+                // update table data
+                setCourses(prevState => {
+                    const updatedData = prevState.filter(row => row._id !== objId);
+                    return updatedData;
+                });
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+        } 
+    }
+
   return (
     <div className='admin-course-list-container'>
         <div className='admin-course-list'>
@@ -15,39 +56,19 @@ const CourseList = () => {
                     <th className='admin-course-list-th'>FEES</th>
                     <th className='admin-course-list-th'>EDIT</th>
                 </tr>
-                <tr className='admin-course-list-tr'>
-                    <td className='admin-course-list-td' data-label='COURSE Name'>B.A English</td>
-                    <td className='admin-course-list-td' data-label='DEPARTMENT'>B.A</td>
-                    <td className='admin-course-list-td' data-label='DURATION'>3 Year</td>
-                    <td className='admin-course-list-td' data-label='FEES'>1,20,000</td>
+                {courses.map((course, index)=> (
+                    <tr className='admin-course-list-tr'>
+                    <td className='admin-course-list-td' data-label='COURSE Name'>{course.name}</td>
+                    <td className='admin-course-list-td' data-label='DEPARTMENT'>{course.department}</td>
+                    <td className='admin-course-list-td' data-label='DURATION'>{course.duration}</td>
+                    <td className='admin-course-list-td' data-label='FEES'>{course.fees}</td>
                     <td className='admin-course-list-td' data-label='EDIT'>
                         <AiOutlineEye size={24} className='admin-course-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-course-list-logo' /> 
-                        <BsTrash size={24} className='admin-course-list-logo-trash' /> 
+                        <AiOutlineFileAdd size={24} onClick={() => handleEditClick(course)} className='admin-course-list-logo' /> 
+                        <BsTrash size={24} onClick={() => handleDeleteClick(course._id)} className='admin-course-list-logo-trash' /> 
                     </td>
                 </tr>
-                <tr className='admin-course-list-tr'>
-                    <td className='admin-course-list-td' data-label='COURSE NAME'>B.A Economics</td>
-                    <td className='admin-course-list-td' data-label='DEPARTMENT'>B.A</td>
-                    <td className='admin-course-list-td' data-label='DURATION'>3 Year</td>
-                    <td className='admin-course-list-td' data-label='FEES'>1,20,000</td>
-                    <td className='admin-course-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-course-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-course-list-logo' /> 
-                        <BsTrash size={24} className='admin-course-list-logo-trash' /> 
-                    </td>
-                </tr>
-                <tr className='admin-course-list-tr'>
-                    <td className='admin-course-list-td' data-label='COURSE NAME'>B.Com Co-operation</td>
-                    <td className='admin-course-list-td' data-label='DEPARTMENT'>B.Com</td>
-                    <td className='admin-course-list-td' data-label='DURATION'>3 Year</td>
-                    <td className='admin-course-list-td' data-label='FEES'>1,20,000</td>
-                    <td className='admin-course-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-course-list-logo' /> 
-                        <AiOutlineFileAdd size={24} className='admin-course-list-logo' /> 
-                        <BsTrash size={24} className='admin-course-list-logo-trash' /> 
-                    </td>
-                </tr>
+                ))}
             </table>
         </div>
     </div>

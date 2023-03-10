@@ -27,22 +27,25 @@ const InstitutionList = ({ setUpdateInstModal, setDefaultValues, objects, setFor
     }
 
     const handleDeleteClick = (objId) => {
-        fetch(`http://localhost:8000/api/admin/institution/${objId}`,{
-            method:'DELETE',
-            headers:{
-                'Authorization':`Bearer ${token}`,
-            },
-        })
-        .then(response => {
-            // update table data
-            setObjects(prevState => {
-                const updatedData = prevState.filter(row => row._id !== objId);
-                return updatedData;
+        const confirmBox = window.confirm("Confirm to delete this institute?")
+        if (confirmBox === true) {
+            fetch(`http://localhost:8000/api/admin/institution/${objId}`,{
+                method:'DELETE',
+                headers:{
+                    'Authorization':`Bearer ${token}`,
+                },
+            })
+            .then(response => {
+                // update table data
+                setObjects(prevState => {
+                    const updatedData = prevState.filter(row => row._id !== objId);
+                    return updatedData;
+                });
+            })
+            .catch((error) => {
+                console.error(error);
             });
-        })
-        .catch((error) => {
-            console.error(error);
-        });
+        } 
     }
     
   return (

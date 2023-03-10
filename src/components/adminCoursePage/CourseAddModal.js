@@ -1,29 +1,25 @@
-import './InstitutionAddModal.css'
+import './CourseAddModalStyles.css'
 import React from 'react'
 
-const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
+const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
     const token = localStorage.getItem('token')
-
-    function closeModal() {
-        setInstModal(false)
-    }
-
+    
     const [formData, setFormData] = React.useState({
         name: '',
-        phone: '',
-        email: '',
-        location: '',
+        department: '',
+        duration: '',
+        fees: '',
     });
 
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
-    
+
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('http://localhost:8000/api/admin/institution', {
+        fetch('http://localhost:8000/api/admin/course', {
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,
@@ -32,7 +28,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
           body: JSON.stringify(formData)
         })
         .then((res) => {
-            setObjects([...objects, formData]);
+            setCourses([...courses, formData]);
         })
         .then((res)=> {
             console.log(res)
@@ -42,9 +38,12 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
         })
         .catch(error => console.error(error));
 
-        setInstModal(false)
+        setAddCourseModal(false)
     };
-    
+
+    function popModal() {
+        setAddCourseModal(false)
+    }
   return (
     <div className='modalBackground'>
         <div className='modalContainer'>
@@ -52,7 +51,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
             <div className='modal-title'>
-                <h3>Add Institute</h3>
+                <h3>Add Course</h3>
             </div>
             <div className='modal-body'>
                 <form onSubmit={handleSubmit} className='modal-body-from'>
@@ -61,27 +60,26 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                         <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Phone:
-                        <input className='modal-body-from-input' type="text" name="phone" onChange={handleChange} />
+                        Department:
+                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Email:
-                        <input className='modal-body-from-input' type="email" name="email" onChange={handleChange} />
+                        Duration:
+                        <input className='modal-body-from-input' type="text" name="duration" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
-                        Location:
-                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
+                        Fees:
+                        <input className='modal-body-from-input' type="number" name="fees" onChange={handleChange} />
                     </label>
                     <div className='modal-footer'>
-                        <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={ closeModal } >Cancel</button>
+                        <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>
                         <button type="submit" className='modalFooter-btn'>Submit</button>
                     </div>
                 </form>
             </div>
-            
         </div>
     </div>
   )
 }
 
-export default InstitutionModal
+export default CourseAddModal

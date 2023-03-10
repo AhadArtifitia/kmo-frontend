@@ -42,10 +42,12 @@
 
 .admin-course-list-logo {
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .admin-course-list-logo-trash {
     color: red;
+    cursor: pointer;
 }
 
 .admin-course-list-thr3, .admin-course-list-thr2 {
