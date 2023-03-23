@@ -133,11 +133,6 @@
     padding: 2rem;
 }
 
-.heroV2-course p {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 35px;}
-
 .heroV2-course-btn {
     display: flex;
     flex-direction: column;
@@ -155,7 +150,6 @@
     display: inline-block;
     font-size: 1em;
     border-radius: 10px;
-    /* margin: 4px 2px; */
 }
 
 header {
@@ -345,5 +339,53 @@ nav a {
     }
 }
 
+@media screen and (max-width: 420px) {
 
+    .heroV2-course-slider {
+        top: 63vh;
+        width: 80vw;
+        height: 30vh;
+        gap: 0rem;
+        padding: 1rem 3rem;
+    }
+
+    .heroV2-title h5 {
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    
+    .heroV2-title h2 {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .heroV2-title-btn {
+        padding: 6px 29px;
+        font-size: 1em;
+        margin: 0px 2px;
+    }
+
+    .heroV2-course {
+        width: 17vw;
+        height: 18vh;
+        text-align: center;
+        padding: 0.5rem;
+    }
+
+    .heroV2-course-btn button {
+        padding: 5px 22px;
+        font-size: 0.6em;
+    }
+
+    .heroV2-course b {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 35px;
+    }
+
+    .heroV2-course-slider h5 {
+        font-size: 1.5rem;
+        font-weight: 400;
+    }
+}
 
