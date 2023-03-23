@@ -31,7 +31,7 @@ const CourseList = ({courses, courseSearch, setUpdateCourseModal, setCourses, se
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this course?")
         if (confirmBox === true) {
-            fetch(`http://localhost:8000/api/admin/course/${objId}`,{
+            fetch(`https://backend.kmokoduvally.com/api/admin/course/${objId}`,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,

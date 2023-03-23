@@ -35,7 +35,7 @@ const InstitutionList = ({ setUpdateInstModal, instSearch, setDefaultValues, obj
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this institute?")
         if (confirmBox === true) {
-            fetch(`http://localhost:8000/api/admin/institution/${objId}`,{
+            fetch(`https://backend.kmokoduvally.com/api/admin/institution/${objId}`,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,

@@ -26,7 +26,7 @@ const CareerList = ({careers, setUpdateCareerModal, setCareers, setFormValues, s
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this Career?")
         if (confirmBox === true) {
-            fetch(`http://localhost:8000/api/admin/career/${objId}`,{
+            fetch(`https://backend.kmokoduvally.com/api/admin/career/${objId}`,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,

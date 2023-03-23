@@ -31,7 +31,7 @@ const DepartmentList = ({setUpdateDepModal, depSearch, departments, setDefaultVa
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this department?")
         if (confirmBox === true) {
-            fetch(`http://localhost:8000/api/admin/department/${objId}`,{
+            fetch(`https://backend.kmokoduvally.com/api/admin/department/${objId}`,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,

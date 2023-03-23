@@ -26,7 +26,7 @@ const EventList = ({events, setUpdateEventModal, setEvents, setFormValues, setDe
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this event?")
         if (confirmBox === true) {
-            fetch(`http://localhost:8000/api/admin/event/${objId}`,{
+            fetch(`https://backend.kmokoduvally.com/api/admin/event/${objId}`,{
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,
