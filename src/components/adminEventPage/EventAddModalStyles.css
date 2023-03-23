@@ -1,12 +1,8 @@
 .modalBackground {
-    /* max-width: 100%;
-    max-height: 100%; */
     background-color: #E4E3E3;
-    /* position: fixed; */
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 75vw;
     height: 64vh;
     position: fixed;
@@ -14,18 +10,18 @@
     right: 0;
   }
   
-  .modalContainer {
+  .event-modalContainer {
     width: 800px;
-    height: 350px;
+    height: 400px;
     border-radius: 12px;
-    background-color: black;
+    background-color: white;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     display: flex;
     flex-direction: column;
     padding: 25px;
   }
   
-  .modalContainer .modal-title {
+  .event-modalContainer .modal-title {
     display: inline-block;
     text-align: center;
     margin-top: 10px;
@@ -43,7 +39,7 @@
     cursor: pointer;
   }
   
-  .modalContainer .modal-body {
+  .event-modalContainer .modal-body {
     flex: 50%;
     display: flex;
     justify-content: center;
@@ -52,14 +48,14 @@
     text-align: center;
   }
   
-  .modalContainer .modal-footer {
+  .event-modalContainer .modal-footer {
     flex: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
-  .modalContainer .modal-footer .modalFooter-btn {
+  .event-modalContainer .modal-footer .modalFooter-btn {
     width: 120px;
     height: 40px;
     margin: 10px;

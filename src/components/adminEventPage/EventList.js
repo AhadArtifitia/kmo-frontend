@@ -7,7 +7,7 @@ const EventList = ({events, setUpdateEventModal, setEvents, setFormValues, setDe
     const token = localStorage.getItem('token')
 
     const handleEditClick = (object) => {
-        fetch(`http://localhost:8000/api/admin/event/${object._id}`,{
+        fetch(`https://backend.kmokoduvally.com/api/admin/event/${object._id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,
@@ -67,7 +67,7 @@ const EventList = ({events, setUpdateEventModal, setEvents, setFormValues, setDe
                         <td className='admin-event-list-td' data-label='LOCATION'>{event.location}</td>
                         <td className='admin-event-list-td' data-label='DATE AND TIME'>{event.datetime}</td>
                         <td className='admin-event-list-td' data-label='EDIT'>
-                            <AiOutlineEye size={24} className='admin-event-list-logo' /> 
+                            {/* <AiOutlineEye size={24} className='admin-event-list-logo' />  */}
                             <AiOutlineFileAdd size={24} onClick={() => handleEditClick(event)} className='admin-event-list-logo' /> 
                             <BsTrash size={24} onClick={() => handleDeleteClick(event._id)} className='admin-event-list-logo-trash' /> 
                         </td>

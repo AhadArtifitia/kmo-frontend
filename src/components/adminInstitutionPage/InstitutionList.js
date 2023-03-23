@@ -1,16 +1,22 @@
 import './InstitutionListStyles.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { CgProfile } from 'react-icons/cg'
 import { GrLocation } from 'react-icons/gr'
 import { BsTelephone, BsTrash } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineFileAdd, AiOutlineMail } from 'react-icons/ai'
 
-const InstitutionList = ({ setUpdateInstModal, setDefaultValues, objects, setFormValues, setObjects }) => {
+const InstitutionList = ({ setUpdateInstModal, instSearch, setDefaultValues, objects, setFormValues, setObjects }) => {
+
+    const filteredDepartments = objects.filter(item => 
+        item.name.toLowerCase().includes(instSearch.toLowerCase()) 
+    );
+
     const token = localStorage.getItem('token')
 
     const handleEditClick = (object) => {
         console.log(object);
-        fetch(`http://localhost:8000/api/admin/institution/${object._id}`,{
+        fetch(`https://backend.kmokoduvally.com/api/admin/institution/${object._id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,
@@ -54,7 +60,7 @@ const InstitutionList = ({ setUpdateInstModal, setDefaultValues, objects, setFor
             <div className='admin-institution-list-table' >
                 <table>
                 <tbody>
-                {objects.map((row, index) => (
+                {filteredDepartments.map((row, index) => (
                     <tr key={row._id}>
                         <div className='admin-institution-list-table-row'>   
                             <div className='admin-institution-list-table-row1'>
@@ -67,12 +73,12 @@ const InstitutionList = ({ setUpdateInstModal, setDefaultValues, objects, setFor
                             </div>
                             <div className='admin-institution-list-table-row2'>
                                 <div className='admin-institution-list-table-col'>
-                                    <BsTelephone size={24} className='admin-list-logo' />
-                                    <AiOutlineMail size={24} className='admin-list-logo' />
-                                    <GrLocation size={24} className='admin-list-logo' />  
+                                    <a href={`tel:${row.phone}`}><BsTelephone size={24} className='admin-list-logo' /></a>
+                                    <a href={`mailto:${row.email}`}><AiOutlineMail size={24} className='admin-list-logo' /></a>                           
+                                    <Link to={row.location}><GrLocation size={24} className='admin-list-logo' /></Link>
                                 </div>
                                 <div className='admin-institution-list-table-col'>
-                                    <AiOutlineEye size={24} className='admin-list-logo' /> 
+                                    {/* <AiOutlineEye size={24} className='admin-list-logo' />  */}
                                     <AiOutlineFileAdd size={24} onClick={() => handleEditClick(row)} className='admin-list-logo' /> 
                                     <BsTrash size={24} onClick={() => handleDeleteClick(row._id)} className='admin-list-logo-trash' /> 
                                 </div>

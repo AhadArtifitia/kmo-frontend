@@ -12,6 +12,7 @@ const AdminCourse = () => {
   const [defaultValues, setDefaultValues] = React.useState({});
   const [formValues, setFormValues] = React.useState(defaultValues);
   const [updateCourseModal, setUpdateCourseModal] = React.useState(false)
+  const [courseSearch, setCourseSearch] = React.useState('')
   const token = localStorage.getItem('token')
 
   React.useEffect(()=>{
@@ -19,7 +20,7 @@ const AdminCourse = () => {
   },[])
 
   const fetchAllCourse=async()=>{
-    await fetch('http://localhost:8000/api/admin/course',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/course',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,
@@ -38,8 +39,8 @@ const AdminCourse = () => {
     <div>
       <SideNav />
       <AdminNav />
-      <CourseSearch setAddCourseModal={setAddCourseModal} />
-      <CourseList courses={courses} setUpdateCourseModal={setUpdateCourseModal} setCourses={setCourses} setFormValues={setFormValues} setDefaultValues={setDefaultValues} />
+      <CourseSearch setAddCourseModal={setAddCourseModal} courseSearch={courseSearch} setCourseSearch={setCourseSearch} />
+      <CourseList courses={courses} courseSearch={courseSearch} setUpdateCourseModal={setUpdateCourseModal} setCourses={setCourses} setFormValues={setFormValues} setDefaultValues={setDefaultValues} />
       {addCourseModal && <CourseAddModal setAddCourseModal={setAddCourseModal} courses={courses} setCourses={setCourses} />}
       {updateCourseModal && <CourseUpdateModal setUpdateCourseModal={setUpdateCourseModal} formValues={formValues} setFormValues={setFormValues} setCourses={setCourses} defaultValues={defaultValues} setDefaultValues={setDefaultValues} />}
     </div>

@@ -19,7 +19,7 @@ const AdminCareer = () => {
   },[])
 
   const fetchAllCareer=async()=>{
-    await fetch('http://localhost:8000/api/admin/career',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/career',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,

@@ -20,7 +20,7 @@ const CareerAddModal = ({setAddCareerModal, careers, setCareers}) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('http://localhost:8000/api/admin/career', {
+        fetch('https://backend.kmokoduvally.com/api/admin/career', {
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,
@@ -75,7 +75,7 @@ const CareerAddModal = ({setAddCareerModal, careers, setCareers}) => {
                     </label>
                     <label className='modal-body-from-label'>
                         Updated:
-                        <input className='modal-body-from-input' type="text" name="updated" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="date" name="updated" onChange={handleChange} />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

@@ -7,6 +7,29 @@ const CourseList = () => {
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
 
+  const [courses, setCourses] = React.useState([])
+  const token = localStorage.getItem('token')
+
+  React.useEffect(()=>{
+    fetchAllCourse()
+  },[])
+
+  const fetchAllCourse=async()=>{
+    await fetch('https://backend.kmokoduvally.com/api/admin/course',{
+        method:'GET',
+        headers:{
+            'Authorization':`Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+    })
+    .then((res)=>res.json())
+    .then((res)=>{
+      if(Array.isArray(res)&&res?.length>0){
+        setCourses(res)
+      }
+    })
+  }
+
   return (
     <div className='course-list'>
         <div className={ click ? 'list-section active' : 'list-section' }>
@@ -25,18 +48,12 @@ const CourseList = () => {
                 (<FaTimes size={20} style={{ color:'#fff' }} />) : (<FaBars size={20} style={{ color:`var(--theemColor)` }} />)
             }
         </div>
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">8th</a>
-            <a href="#" class="list-group-item list-group-item-action">9th</a>
-            <a href="#" class="list-group-item list-group-item-action">SSLC</a>
-            <a href="#" class="list-group-item list-group-item-action">SCIENCE</a>
-            <a href="#" class="list-group-item list-group-item-action">COMMERCE</a>
-            <a href="#" class="list-group-item list-group-item-action">HUMANITIES</a>
-            <a href="courses/english" class="list-group-item list-group-item-action">B.A English</a>
-            <a href="#" class="list-group-item list-group-item-action">B.A Economics</a>
-            <a href="#" class="list-group-item list-group-item-action">B.Com Co-operation</a>
-            <a href="#" class="list-group-item list-group-item-action">B.Sc Zoology</a>
-        </div>
+        {courses.map((course, index)=> (
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action">{course.name}</a>
+          </div>
+        ))}
+          
     </div>
   )
 }

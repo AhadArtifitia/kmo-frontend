@@ -9,7 +9,6 @@
 
 .contact-form {
     background-color: white;
-    /* flex: 1; */
     padding: 1rem;
     max-width: 50%;
 }
@@ -58,7 +57,7 @@
 }
 
 .contact-form .send-btn:hover {
-    background: #017941;
+    background: #000;
 }
 
 .location {

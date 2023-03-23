@@ -19,7 +19,7 @@ const AdminEvents = () => {
   },[])
 
   const fetchAllEvent=async()=>{
-    await fetch('http://localhost:8000/api/admin/event',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/event',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,

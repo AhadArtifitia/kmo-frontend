@@ -3,11 +3,16 @@ import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 
-const DepartmentList = ({setUpdateDepModal, departments, setDefaultValues, setFormValues, setDepartments}) => {
+const DepartmentList = ({setUpdateDepModal, depSearch, departments, setDefaultValues, setFormValues, setDepartments}) => {
+
+    const filteredDepartments = departments.filter(item => 
+        item.name.toLowerCase().includes(depSearch.toLowerCase()) 
+    );
+
     const token = localStorage.getItem('token')
 
     const handleEditClick = (object) => {
-        fetch(`http://localhost:8000/api/admin/department/${object._id}`,{
+        fetch(`https://backend.kmokoduvally.com/api/admin/department/${object._id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,
@@ -57,15 +62,15 @@ const DepartmentList = ({setUpdateDepModal, departments, setDefaultValues, setFo
                     <th className='admin-department-list-th'>STD. CAPACITY</th>
                     <th className='admin-department-list-th'>EDIT</th>
                 </tr>
-                {departments.map((dep, index) =>(
+                {filteredDepartments.map((dep, index) =>(
                     <tr className='admin-department-list-tr'>
                         <td className='admin-department-list-td' data-label='#'>{index+1}</td>
                         <td className='admin-department-list-td' data-label='ORGANDEPT. NAMEIZER'>{dep.name}</td>
                         <td className='admin-department-list-td' data-label='HEAD OF DEPT.'>{dep.hod}</td>
-                        <td className='admin-department-list-td' data-label='COURSES'>{dep.courses}</td>
+                        <td className='admin-department-list-td' data-label='COURSES'>{dep.courses}</td>                       
                         <td className='admin-department-list-td' data-label='STD. CAPACITY'>{dep.capacity}</td>
                         <td className='admin-event-list-td' data-label='EDIT'>
-                            <AiOutlineEye size={24} className='admin-department-list-logo' /> 
+                            {/* <AiOutlineEye size={24} className='admin-department-list-logo' />  */}
                             <AiOutlineFileAdd size={24} onClick={() => handleEditClick(dep)} className='admin-department-list-logo' /> 
                             <BsTrash size={24} onClick={() => handleDeleteClick(dep._id)} className='admin-department-list-logo-trash' /> 
                         </td>

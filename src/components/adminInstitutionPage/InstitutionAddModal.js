@@ -9,41 +9,63 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
     }
 
     const [formData, setFormData] = React.useState({
-        name: '',
-        phone: '',
-        email: '',
-        location: '',
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        image: null,
     });
 
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
-    
-    const handleSubmit = e => {
-        e.preventDefault();
 
-        fetch('http://localhost:8000/api/admin/institution', {
-          method: 'POST',
-          headers: { 
-            'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json' 
-        },
-          body: JSON.stringify(formData)
+    const handleImageChange = (e) => {
+        setFormData({
+          ...formData,
+          image: e.target.files[0],
+        });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append("name", formData.name);
+        data.append("email", formData.email);
+        data.append("phone", formData.phone);
+        data.append("location", formData.location);
+        data.append("image", formData.image);
+
+        const headers = {
+            Authorization: `Bearer ${token}`,
+          };
+      
+        fetch("https://backend.kmokoduvally.com/api/admin/institution", {
+          method: "POST",
+          headers,
+          body: data,
         })
-        .then((res) => {
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            // update existing table with new data
             setObjects([...objects, formData]);
         })
-        .then((res)=> {
-            console.log(res)
-            if(res?.token){
-                localStorage.setItem('token',res.token)
-            }
-        })
-        .catch(error => console.error(error));
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 
         setInstModal(false)
     };
+
+    //     .then((res)=> {
+    //         console.log(res)
+    //         if(res?.token){
+    //             localStorage.setItem('token',res.token)
+    //         }
+    //     })
+
     
   return (
     <div className='modalBackground'>
@@ -72,6 +94,10 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                         Location:
                         <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
                     </label>
+                    <label className='modal-body-from-label'>
+                        Image:
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
+                    </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={ closeModal } >Cancel</button>
                         <button type="submit" className='modalFooter-btn'>Submit</button>
@@ -85,3 +111,4 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
 }
 
 export default InstitutionModal
+

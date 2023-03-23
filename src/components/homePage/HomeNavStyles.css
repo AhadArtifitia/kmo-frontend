@@ -2,9 +2,8 @@
     display: flex;
     width: 100%;
     background-color: var(--themeColor);
-    padding: 0 9vw;
+    padding: 0vw 9vw;
     margin: 0;
-    
 }
 
 .home-nav {

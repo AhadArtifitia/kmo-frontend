@@ -14,7 +14,7 @@ const DepartmentUpdateModal = ({setUpdateDepModal, formValues, setFormValues, se
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:8000/api/admin/department/${defaultValues._id}`, {
+        fetch(`https://backend.kmokoduvally.com/api/admin/department/${defaultValues._id}`, {
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,

@@ -123,17 +123,14 @@
     }
 
     .login-form-input {
-        /* width: 150px; */
         width: 45vw;
     }
 
     .login-form-button {
-        /* width: 150px; */
         width: 45vw;
     }
 
     .login-content {
         padding: 8vw;
-        /* width: 300px; */
     }
 }

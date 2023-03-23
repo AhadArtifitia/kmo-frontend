@@ -3,11 +3,16 @@ import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { AiOutlineEye, AiOutlineFileAdd } from 'react-icons/ai'
 
-const CourseList = ({courses, setUpdateCourseModal, setCourses, setFormValues, setDefaultValues}) => {
+const CourseList = ({courses, courseSearch, setUpdateCourseModal, setCourses, setFormValues, setDefaultValues}) => {
+    
+    const filteredCourses = courses.filter(item => 
+        item.name.toLowerCase().includes(courseSearch.toLowerCase()) 
+    );
+
     const token = localStorage.getItem('token')
 
     const handleEditClick = (object) => {
-        fetch(`http://localhost:8000/api/admin/course/${object._id}`,{
+        fetch(`https://backend.kmokoduvally.com/api/admin/course/${object._id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,
@@ -56,14 +61,14 @@ const CourseList = ({courses, setUpdateCourseModal, setCourses, setFormValues, s
                     <th className='admin-course-list-th'>FEES</th>
                     <th className='admin-course-list-th'>EDIT</th>
                 </tr>
-                {courses.map((course, index)=> (
+                {filteredCourses.map((course, index)=> (
                     <tr className='admin-course-list-tr'>
                     <td className='admin-course-list-td' data-label='COURSE Name'>{course.name}</td>
                     <td className='admin-course-list-td' data-label='DEPARTMENT'>{course.department}</td>
                     <td className='admin-course-list-td' data-label='DURATION'>{course.duration}</td>
                     <td className='admin-course-list-td' data-label='FEES'>{course.fees}</td>
                     <td className='admin-course-list-td' data-label='EDIT'>
-                        <AiOutlineEye size={24} className='admin-course-list-logo' /> 
+                        {/* <AiOutlineEye size={24} className='admin-course-list-logo' />  */}
                         <AiOutlineFileAdd size={24} onClick={() => handleEditClick(course)} className='admin-course-list-logo' /> 
                         <BsTrash size={24} onClick={() => handleDeleteClick(course._id)} className='admin-course-list-logo-trash' /> 
                     </td>

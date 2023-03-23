@@ -13,8 +13,8 @@
 }
 
 .events-body {
-    width: 50%;
-    padding: 1rem;
+    width: 50vw;
+    padding: 5rem;
 }
 
 .events-body h2 {
@@ -52,6 +52,7 @@
     
     .events-body {
         width: 100%;
+        padding: 2rem;
     }
 
     .events-body h2 {

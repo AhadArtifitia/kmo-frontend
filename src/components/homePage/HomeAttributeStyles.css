@@ -1,0 +1,37 @@
+.home-attribute {
+    padding: 7vw 7vw;
+    background: #ECECEC;
+    text-align: center;
+}
+
+.home-attribute-row {
+    padding: 2vw 7vw;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.home-attribute-col {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.home-attribute-col h3 {
+    font-size: 1.5em;
+}
+
+.home-attribute-col p {
+    font-size: 0.7em;
+}
+
+.home-attribute-col a {
+    text-decoration: none;
+    color: var(--themeColor);
+}
+
+@media screen and (max-width: 700px) {
+    .home-attribute-row {
+        flex-direction: column;
+    }
+}

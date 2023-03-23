@@ -19,7 +19,7 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('http://localhost:8000/api/admin/course', {
+        fetch('https://backend.kmokoduvally.com/api/admin/course', {
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,

@@ -27,7 +27,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>                
@@ -75,7 +75,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>
@@ -86,7 +86,7 @@ const galleryBody = () => {
                             <AiOutlineZoomIn size={20} style={{ color:'#fff' }} />
                         </div>
                         <div className='overlay-cameraicon'>
-                            <AiOutlineCamera size={20} style={{ color:'#fff' }} />
+                            {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                         </div>
                     </div>
                 </div>

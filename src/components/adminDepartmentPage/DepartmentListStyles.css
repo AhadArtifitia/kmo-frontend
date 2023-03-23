@@ -9,11 +9,14 @@
 .admin-department-list {
     padding: 3vw 7vw;
     width: 100%;
+    max-height: 56vh;
+    overflow-y: scroll;
 }
 
 .admin-department-list table {
     width: 100%;
     border: 1px solid #dddddd;
+    border-collapse: collapse;
 }
 
 .admin-department-list-thr {

@@ -9,11 +9,15 @@
 .admin-career-list {
     padding: 3vw 7vw;
     width: 100%;
+
+    max-height: 56vh;
+    overflow-y: scroll;
 }
 
 .admin-career-list table {
     width: 100%;
     border: 1px solid #dddddd;
+    border-collapse: collapse;
 }
 
 .admin-career-list-thr {
@@ -42,10 +46,12 @@
 
 .admin-career-list-logo {
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .admin-career-list-logo-trash {
     color: red;
+    cursor: pointer;
 }
 
 .admin-career-list-thr3, .admin-career-list-thr2 {

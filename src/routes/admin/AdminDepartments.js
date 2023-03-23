@@ -12,6 +12,7 @@ const AdminDepartments = () => {
   const [defaultValues, setDefaultValues] = React.useState({});
   const [formValues, setFormValues] = React.useState(defaultValues);
   const [updateDepModal, setUpdateDepModal] = React.useState(false)
+  const [depSearch, setDepSearch] = React.useState('')
   const token = localStorage.getItem('token')
 
   React.useEffect(()=>{
@@ -19,7 +20,7 @@ const AdminDepartments = () => {
   },[])
 
   const fetchAllDepartment=async()=>{
-    await fetch('http://localhost:8000/api/admin/department',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/department',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,
@@ -39,8 +40,8 @@ const AdminDepartments = () => {
     <div>
       <AdminNav />
       <SideNav />
-      <DepartmentSearch setAddDepModal={setAddDepModal} />
-      <DepartmentList departments={departments} setUpdateDepModal={setUpdateDepModal} setDefaultValues={setDefaultValues} setFormValues={setFormValues} setDepartments={setDepartments} />
+      <DepartmentSearch setAddDepModal={setAddDepModal} depSearch={depSearch} setDepSearch={setDepSearch} />
+      <DepartmentList departments={departments} depSearch={depSearch} setUpdateDepModal={setUpdateDepModal} setDefaultValues={setDefaultValues} setFormValues={setFormValues} setDepartments={setDepartments} />
       {addDepModal && <DepartmentAddModal setAddDepModal={setAddDepModal} departments={departments} setDepartments={setDepartments} /> }
       {updateDepModal && <DepartmentUpdateModal setUpdateDepModal={setUpdateDepModal} formValues={formValues} setFormValues={setFormValues} setDepartments={setDepartments} defaultValues={defaultValues} setDefaultValues={setDefaultValues} />}
     </div>

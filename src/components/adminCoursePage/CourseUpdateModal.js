@@ -14,7 +14,7 @@ const CourseUpdateModal = ({setUpdateCourseModal, formValues, setFormValues, set
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:8000/api/admin/course/${defaultValues._id}`, {
+        fetch(`https://backend.kmokoduvally.com/api/admin/course/${defaultValues._id}`, {
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,

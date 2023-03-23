@@ -14,7 +14,7 @@ const EventUpdateModal = ({setUpdateEventModal, formValues, setFormValues, setEv
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`http://localhost:8000/api/admin/event/${defaultValues._id}`, {
+        fetch(`https://backend.kmokoduvally.com/api/admin/event/${defaultValues._id}`, {
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,
@@ -47,7 +47,7 @@ const EventUpdateModal = ({setUpdateEventModal, formValues, setFormValues, setEv
     }
   return (
     <div className='modalBackground'>
-        <div className='modalContainer'>
+        <div className='event-modalContainer'>
             {/* <div className='titleCloseBtn'>
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}

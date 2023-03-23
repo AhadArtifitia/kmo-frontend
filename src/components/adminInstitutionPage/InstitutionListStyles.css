@@ -10,6 +10,15 @@
     padding: 0vw 7vw;
 }
 
+.admin-institution-list-table table {
+    border-collapse: collapse;
+}
+
+.admin-institution-list-table {
+    max-height: 56vh;
+    overflow-y: scroll;
+}
+
 .admin-institution-list-table-row {
     display: flex;
     justify-content: space-between;
@@ -18,7 +27,6 @@
 
 .admin-institution-list-table-row1 {
     display: flex;
-    /* justify-content: space-around; */
     width: 100%;
     gap: 30px;
     margin-left: 20px;
@@ -44,6 +52,7 @@
 .admin-list-logo {
     margin-left: 8px;
     cursor: pointer;
+    color: black;
 }
 
 .admin-list-logo-trash {

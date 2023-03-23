@@ -16,6 +16,13 @@
     padding-right: 1rem;
 }
 
+
+.admin-nav-logout {
+    text-decoration: none;
+    color: var(--themeColor);
+    font-size: 18px;
+}
+
 .admin-nav-logo {
     color: var(--themeColor);
 }

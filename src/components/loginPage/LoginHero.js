@@ -9,32 +9,40 @@ const LoginHero = () => {
 
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('')
+  const [responseMessage, setResponseMessage] = useState('');
   const navigate = useNavigate()
 
   const onSubmit=(e)=>{
     e?.preventDefault()
-    console.log('clicked')
-    console.log({email,password})
     let obj={
       email:email,
       password:password
     }
-    console.log({obj})
 
-    fetch('http://localhost:8000/api/admin/login',{
+    fetch('https://backend.kmokoduvally.com/api/admin/login',{
       method:'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body:JSON.stringify(obj)
 
-    }).then((res)=>res.json()).then((res)=>{
-      console.log({res})
+    })
+    .then((res)=>res.json())
+    .then((res)=>{
       if(res?.token){
+        setResponseMessage('Login successful!');
         localStorage.setItem('token',res.token)
+        localStorage.setItem('admin',obj.email)
         navigate('/admin/institution')
+      } else {
+        // error
+        console.log('Invalid username or password!');
+        setResponseMessage('Invalid username or password!');
       }
     })
+    .catch(error => {
+      setResponseMessage('An error occurred while logging in!');
+    });
   }
 
   return (
@@ -58,8 +66,9 @@ const LoginHero = () => {
                 </div>
                 
                 <button className='login-form-button' type="button" onClick={onSubmit}>Login</button>
+                {responseMessage && <p>{responseMessage}</p>}
             </form>
-            <Link to='#'>Forgot Password?</Link>
+            {/* <Link to='#'>Forgot Password?</Link> */}
         </div>
       </div>
     </div>

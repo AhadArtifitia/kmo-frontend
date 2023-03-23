@@ -12,6 +12,7 @@ const AdminInstitution = () => {
   const [defaultValues, setDefaultValues] = React.useState({});
   const [objects, setObjects] = React.useState([]);
   const [formValues, setFormValues] = React.useState(defaultValues);
+  const [instSearch, setInstSearch] = React.useState('')
   const token = localStorage.getItem('token')
 
   React.useEffect(()=>{
@@ -19,7 +20,7 @@ const AdminInstitution = () => {
   },[])
 
   const fetchAllInstitution=async()=>{
-    await fetch('http://localhost:8000/api/admin/institution',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/institution',{
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,
@@ -37,8 +38,8 @@ const AdminInstitution = () => {
     <div>
       <SideNav />
       <AdminNav />
-      <InstitutionSearch setInstModal={setInstModal} />
-      <InstitutionList setUpdateInstModal={setUpdateInstModal} setDefaultValues={setDefaultValues} objects={objects} setObjects={setObjects} setFormValues={setFormValues} />
+      <InstitutionSearch setInstModal={setInstModal} instSearch={instSearch} setInstSearch={setInstSearch} />
+      <InstitutionList setUpdateInstModal={setUpdateInstModal} instSearch={instSearch} setDefaultValues={setDefaultValues} objects={objects} setObjects={setObjects} setFormValues={setFormValues} />
       {instModal && <InstitutionModal setInstModal={setInstModal} setObjects={setObjects} objects={objects} />}
       {updateInstModal && <InstitutionUpdateModal setUpdateInstModal={setUpdateInstModal} defaultValues={defaultValues} setDefaultValues={setDefaultValues} formValues={formValues} setFormValues={setFormValues} setObjects={setObjects} />}
     </div>

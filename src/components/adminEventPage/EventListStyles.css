@@ -9,11 +9,16 @@
 .admin-event-list {
     padding: 3vw 7vw;
     width: 100%;
+
+    max-height: 56vh;
+    overflow-y: scroll;
 }
 
 .admin-event-list table {
     width: 100%;
     border: 1px solid #dddddd;
+    border-collapse: collapse;
+
 }
 
 .admin-event-list-thr {
@@ -42,10 +47,12 @@
 
 .admin-event-list-logo {
     margin-left: 0px;
+    cursor: pointer;
 }
 
 .admin-event-list-logo-trash {
     color: red;
+    cursor: pointer;
 }
 
 .admin-event-list-thr3, .admin-event-list-thr2 {

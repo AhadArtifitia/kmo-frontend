@@ -7,7 +7,7 @@ const CareerList = ({careers, setUpdateCareerModal, setCareers, setFormValues, s
     const token = localStorage.getItem('token')
 
     const handleEditClick = (object) => {
-        fetch(`http://localhost:8000/api/admin/career/${object._id}`,{
+        fetch(`https://backend.kmokoduvally.com/api/admin/career/${object._id}`,{
             method:'GET',
             headers:{
                 'Authorization':`Bearer ${token}`,
@@ -65,7 +65,7 @@ const CareerList = ({careers, setUpdateCareerModal, setCareers, setFormValues, s
                         <td className='admin-career-list-td' data-label='EXPERIENCE'>{career.experience}</td>
                         <td className='admin-career-list-td' data-label='UPDATED'>{career.updated}</td>
                         <td className='admin-career-list-td' data-label='EDIT'>
-                            <AiOutlineEye size={24} className='admin-career-list-logo' /> 
+                            {/* <AiOutlineEye size={24} className='admin-career-list-logo' />  */}
                             <AiOutlineFileAdd size={24} onClick={() => handleEditClick(career)} className='admin-career-list-logo' /> 
                             <BsTrash size={24} onClick={() => handleDeleteClick(career._id)} className='admin-career-list-logo-trash' /> 
                         </td>
