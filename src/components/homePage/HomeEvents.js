@@ -34,7 +34,7 @@ const HomeEvents = () => {
         <div className='events-img'>
             <img src={img} />
         </div>
-            <Carousel>
+            <Carousel controls={false}>
                 {events.map((event, index)=> (
                 <Carousel.Item>
                     <div className='events-body'>
