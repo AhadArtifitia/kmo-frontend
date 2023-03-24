@@ -10,6 +10,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
 
     const [formData, setFormData] = React.useState({
         name: "",
+        description: "",
         email: "",
         phone: "",
         location: "",
@@ -32,6 +33,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
         e.preventDefault();
         const data = new FormData();
         data.append("name", formData.name);
+        data.append("description", formData.description);
         data.append("email", formData.email);
         data.append("phone", formData.phone);
         data.append("location", formData.location);
@@ -41,7 +43,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
             Authorization: `Bearer ${token}`,
           };
       
-        fetch("https://backend.kmokoduvally.com/api/admin/institution", {
+        fetch("https://backend.kmokoduvally.com/api/admin/institution", { 
           method: "POST",
           headers,
           body: data,
@@ -69,7 +71,7 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
     
   return (
     <div className='modalBackground'>
-        <div className='modalContainer'>
+        <div className='inst-modalContainer'>
             {/* <div className='titleCloseBtn'>
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
@@ -81,6 +83,10 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                     <label className='modal-body-from-label'>
                         Name:
                         <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
                         Phone:
