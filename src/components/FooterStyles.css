@@ -2,7 +2,7 @@
     background-color: var(--themeColor);
     color: white;
     display: flex;
-    padding: 0rem 9vw;
+    padding: 1rem 9vw;
     padding-top: 1rem;
     padding-bottom: -1rem;
 }
