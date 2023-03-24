@@ -2,7 +2,7 @@
     background-color: var(--themeColor);
     color: white;
     display: flex;
-    padding: 1rem 19vw;
+    padding: 1rem 9vw;
     padding-top: 1rem;
     padding-bottom: -1rem;
 }
@@ -72,6 +72,7 @@
 @media screen and (max-width:900px) {
     .footer {
         flex-direction: column;
+        padding: 1rem 9vw;
     }
 
     .footer-body {
@@ -103,6 +104,10 @@
 }
 
 @media screen and (min-width:1200px) {
+    .footer {
+        padding: 1rem 9vw;
+    }
+    
     .footer li a {
         font-size: 1.1vw;
     }
