@@ -70,7 +70,7 @@ const HomeFooter = () => {
             </div>
             <div className='contact-email'>
                 <FaEnvelope size={20} style={{ color:'#fff', marginTop:'0rem' }} />
-                <p>Edu@kmokoduvally.com</p>
+                <p>edu@kmokoduvally.com</p>
             </div>
             <div className='contact-address'>
                 <MdLocationOn size={24} style={{ color:'#fff', marginTop:'0rem' }} />

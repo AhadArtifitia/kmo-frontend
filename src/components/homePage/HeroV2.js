@@ -87,7 +87,7 @@ const HeroV2 = () => {
     <div className='heroV2'>
         <div className='heroV2-header'>
             <p><FaPhoneAlt size={20} style={{ color:'#fff' }} />  +91 9895111396</p>
-            <p><FaEnvelope size={20} style={{ color:'#fff' }} />  Edu@kmokoduvally.com</p>
+            <p><FaEnvelope size={20} style={{ color:'#fff' }} />  edu@kmokoduvally.com</p>
             <p><MdLocationOn size={20} style={{ color:'#fff' }} />State Highway NH766, Koduvally 673572, Kozhikode, Kerala, INDIA</p>
             <p className='heroV2-header-logo'> 
                 <Link to='https://www.facebook.com/KMOArtsCollegeKdly?mibextid=ZbWKwL'><FaFacebookF size={20} style={{ color:'#fff' }} /></Link>

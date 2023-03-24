@@ -69,7 +69,7 @@ const Message = () => {
             <div className='email'>
                 <FaEnvelope size={20} style={{ color:'#fff' }} />
                 <div>
-                    <p className='foo-p'>Edu@kmokoduvally.com</p>
+                    <p className='foo-p'>edu@kmokoduvally.com</p>
                 </div>
             </div>
         </div>
