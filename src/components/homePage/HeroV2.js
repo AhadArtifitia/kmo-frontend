@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Slider from "react-slick";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
-import logo from '../../images/kmo-logo.png'
+import logo from '../../images/kmoLogoB.png'
 
 const HeroV2 = () => {
     var settings = {
@@ -86,18 +86,18 @@ const HeroV2 = () => {
   return (
     <div className='heroV2'>
         <div className='heroV2-header'>
-            <p><FaPhoneAlt size={20} style={{ color:'#fff' }} />  +91 99999 99999</p>
-            <p><FaEnvelope size={20} style={{ color:'#fff' }} />  info@kmc.com</p>
-            <p><MdLocationOn size={20} style={{ color:'#fff' }} />State Highway 68, NH212, Koduvally, Kerala 673572</p>
-            <p className='heroV2-header-logo'>
-                <FaFacebookF size={20} style={{ color:'#fff' }} />
-                <FaInstagram size={20} style={{ color:'#fff' }} />
-                <FaTwitter size={20} style={{ color:'#fff' }} />
-                <FaLinkedinIn size={20} style={{ color:'#fff' }} />
+            <p><FaPhoneAlt size={20} style={{ color:'#fff' }} />  +91 9895111396</p>
+            <p><FaEnvelope size={20} style={{ color:'#fff' }} />  Edu@kmokoduvally.com</p>
+            <p><MdLocationOn size={20} style={{ color:'#fff' }} />State Highway NH766, Koduvally 673572, Kozhikode, Kerala, INDIA</p>
+            <p className='heroV2-header-logo'> 
+                <Link to='https://www.facebook.com/KMOArtsCollegeKdly?mibextid=ZbWKwL'><FaFacebookF size={20} style={{ color:'#fff' }} /></Link>
+                <Link to='https://instagram.com/kmo_college?igshid=YmMyMTA2M2Y='><FaInstagram size={20} style={{ color:'#fff' }} /></Link>
+                <Link to='#'><FaTwitter size={20} style={{ color:'#fff' }} /></Link>
+                <Link to='#'><FaLinkedinIn size={20} style={{ color:'#fff' }} /></Link>
             </p>
-            <button className='heroV2-header-button'>
+            {/* <button className='heroV2-header-button'>
                 make a payment
-            </button>
+            </button> */}
         </div>
 
         <header>

@@ -3,7 +3,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaSearch } from 'react-icons/fa'
 
-const SearchCareer = () => {
+const SearchCareer = ({careerSearch, setCareerSearch}) => {
+    function handleSearch(event) {
+        setCareerSearch(event.target.value);
+    }
   return (
     <div className='search-header'>
         <div className='search-h2'>
@@ -13,7 +16,7 @@ const SearchCareer = () => {
             <table className='elements-container'>
                 <tr>
                     <td>
-                        <input type="text" placeholder='Search jobs' className='search' />
+                        <input type="text" placeholder='Search jobs' value={careerSearch} onChange={handleSearch} className='search' />
                     </td>
                     <td>
                         <Link to='#'>

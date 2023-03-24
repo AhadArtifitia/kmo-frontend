@@ -15,6 +15,10 @@
     font-size: 1vw;
 }
 
+/* .heroV2-header p {
+    font-size: 40px;
+} */
+
 .heroV2-header-logo {
     display: flex;
     gap: 0.5em;
@@ -286,13 +290,13 @@ nav a {
 
     nav a {
         opacity: 1;
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
 }
 
 @media screen and (max-width: 1800px) {
     .heroV2-header p {
-        font-size: 1.3vw;
+        font-size: 1.1vw;
     }
 
     .heroV2-course-slider .slider {
@@ -302,7 +306,7 @@ nav a {
 
 @media screen and (max-width: 1200px) {
     .heroV2-header p {
-        font-size: 1.5vw;
+        font-size: 1.3vw;
     }
 
     .heroV2-course-slider .slider {

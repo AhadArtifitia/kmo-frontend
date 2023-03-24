@@ -13,7 +13,7 @@ const AdminInstitution = () => {
   const [objects, setObjects] = React.useState([]);
   const [formValues, setFormValues] = React.useState(defaultValues);
   const [instSearch, setInstSearch] = React.useState('')
-  const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token') 
 
   React.useEffect(()=>{
     fetchAllInstitution()

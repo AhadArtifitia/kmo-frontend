@@ -11,7 +11,7 @@
     font-size: 1.3vw;
 }
 
-.section-4 h5{
+.section-4 b{
     font-size: 1.6vw;
 }
 
@@ -34,6 +34,10 @@
 .core-values {
     display: flex;
     flex-direction: column;
+}
+
+.core-values p {
+    text-align: justify;
 }
 
 @media screen and (min-width: 1300px) {

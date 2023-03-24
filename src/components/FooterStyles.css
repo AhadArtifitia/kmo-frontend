@@ -2,7 +2,9 @@
     background-color: var(--themeColor);
     color: white;
     display: flex;
-    padding: 5rem 9vw;
+    padding: 0rem 9vw;
+    padding-top: 1rem;
+    padding-bottom: -1rem;
 }
 
 .footer-body {
@@ -17,6 +19,7 @@
 
 .footer-links {
     width: 33%;
+    padding-left: 1rem;
 }
 
 .links-li {
@@ -24,7 +27,7 @@
 }
 
 .links-li ul {
-    padding-top: 2rem;
+    padding-top: 0rem;
 }
 
 .footer-contact {
@@ -39,7 +42,7 @@
 }
 
 .contact-phone p {
-    padding-top: 2rem;
+    padding-top: 0rem;
 }
 
 .contact-email{
@@ -59,6 +62,7 @@
 .links-li a {
     text-decoration: none;
     color: white;
+    margin-left: -1.6rem;
 }
 
 .links-li li {
@@ -90,7 +94,7 @@
 
 @media screen and (max-width:400px) {
     .footer {
-        padding: 2rem;
+        padding: 0rem 2rem;
     }
 
     .footer-body img {
@@ -100,15 +104,15 @@
 
 @media screen and (min-width:1200px) {
     .footer li a {
-        font-size: 1.2vw;
+        font-size: 1.1vw;
     }
 
     .footer h4 {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
     }
 
     .footer p {
-        font-size: 1vw;
+        font-size: 0.9vw;
     }
 }
 

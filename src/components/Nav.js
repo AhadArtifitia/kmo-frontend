@@ -1,5 +1,5 @@
 import './NavStyles.css'
-import logo from '../images/kmo-logo.png'
+import logo from '../images/kmoLogoB.png'
 import React from 'react'
 import { Link } from 'react-router-dom'
 

@@ -18,7 +18,7 @@ const First = () => {
         <HomeInstitutions />
         <HomeAcademic />
         <HomeFeatures />
-        <HomeLaboratory />
+        {/* <HomeLaboratory /> */}
         <HomeEvents />
         <HomeStudents />
         <HomeAttribute />

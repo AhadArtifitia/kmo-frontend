@@ -48,7 +48,7 @@ const InstitutionUpdateModal = ({setUpdateInstModal, defaultValues, setDefaultVa
 
   return (
     <div className='modalBackground'>
-        <div className='modalContainer'>
+        <div className='inst-modalContainer'>
             {/* <div className='titleCloseBtn'>
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
@@ -60,6 +60,10 @@ const InstitutionUpdateModal = ({setUpdateInstModal, defaultValues, setDefaultVa
                     <label htmlFor="name" className='modal-body-from-label'>
                         Name:
                         <input className='modal-body-from-input' type="text" id="name" name="name" value={formValues.name} onChange={handleChange} required />
+                    </label>
+                    <label htmlFor="name" className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" id="description" value={formValues.description} name='description'  onChange={handleChange} />
                     </label>
                     <label htmlFor="phone" className='modal-body-from-label'>
                         Phone:

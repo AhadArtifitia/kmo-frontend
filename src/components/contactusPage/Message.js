@@ -53,22 +53,23 @@ const Message = () => {
             <div className='location'>
                 <MdLocationOn size={22} style={{ color:'#fff', marginTop:'5px' }} />
                 <div>
-                    <p>State Highway 68,NH212, </p>
-                    <p>near super market, </p>
-                    <p>Koduvally, Kerala 673572</p>
+                <p>State Highway NH766, <br />
+                    Koduvally 673572, <br />
+                    Kozhikode, Kerala, INDIA</p>
                 </div>
             </div>
             <div className='phone'>
                 <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'5px' }} />
                 <div>
-                    <p>+91 99999 99999</p>
-                    <p>+91 99999 99999</p>
+                    <p>+91 9895111396 <br />
+                    +91 9497033555 <br />
+                    O495 2211311</p>
                 </div>
             </div>
             <div className='email'>
                 <FaEnvelope size={20} style={{ color:'#fff' }} />
                 <div>
-                    <p className='foo-p'>info@kmc.com</p>
+                    <p className='foo-p'>Edu@kmokoduvally.com</p>
                 </div>
             </div>
         </div>

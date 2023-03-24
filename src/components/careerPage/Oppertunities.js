@@ -1,7 +1,8 @@
 import './OppertunitiesStyles.css'
 import React from 'react'
 
-const Oppertunities = () => {
+const Oppertunities = ({careerSearch}) => {
+
   const [careers, setCareers] = React.useState([])
   const token = localStorage.getItem('token')
 
@@ -25,10 +26,15 @@ const Oppertunities = () => {
     })
   }
 
+  const filteredCourses = careers.filter(item => 
+    item.level.toLowerCase().includes(careerSearch.toLowerCase()) 
+  );
+
+
   return (
     <div className='oppertunities'>
         <p>Ready for your career in KMO Groups? You are just a click away now.</p>
-        {careers.map((career,index)=>(
+        {filteredCourses.map((career,index)=>(
           <div class="list-group p-1">
             <a href="#" class="list-group-item list-group-item-secondary">{career.level}</a>
           </div>

@@ -1,7 +1,7 @@
 import './FooterStyles.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../images/kmo-logo-white.png'
+import logo from '../images/kmoLogoW.png'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 
@@ -63,19 +63,20 @@ const HomeFooter = () => {
         <div className='footer-contact'>
             <h4>Contact Us</h4>
             <div className='contact-phone'>
-                <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'2rem' }} />
-                <p>+91 99999 99999 <br />
-                +91 99999 99999</p>
+                <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'0rem' }} />
+                <p>O495 2211311 <br />
+                9895111396 <br />
+                9497033555</p>
             </div>
             <div className='contact-email'>
                 <FaEnvelope size={20} style={{ color:'#fff', marginTop:'0rem' }} />
-                <p>info@kmc.com</p>
+                <p>Edu@kmokoduvally.com</p>
             </div>
             <div className='contact-address'>
                 <MdLocationOn size={24} style={{ color:'#fff', marginTop:'0rem' }} />
-                <p>State Highway 68,NH212, <br />
-                    near super market, <br />
-                    Koduvally, Kerala 673572</p>
+                <p>State Highway NH766, <br />
+                    Koduvally 673572, <br />
+                    Kozhikode, Kerala, INDIA</p>
             </div>
         </div>
     </div>

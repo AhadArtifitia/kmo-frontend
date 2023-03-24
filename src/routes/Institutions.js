@@ -8,6 +8,8 @@ import InstitutionsList from '../components/institutionPage/InstitutionsList.js'
 
 const Institutions = () => {
   const [institutions, setInstitutions] = React.useState([])
+  const [instSearch, setInstSearch] = React.useState('')
+
   const token = localStorage.getItem('token')
 
   React.useEffect(()=>{
@@ -34,8 +36,8 @@ const Institutions = () => {
     <div>
       <Nav />
       <InstHero />
-      <Search />
-      <InstitutionsList institutions={institutions} />
+      <Search instSearch={instSearch} setInstSearch={setInstSearch} />
+      <InstitutionsList institutions={institutions} instSearch={instSearch} />
       {/* <Blank /> */}
       <Footer />
     </div>

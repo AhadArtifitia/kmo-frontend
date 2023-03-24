@@ -6,12 +6,13 @@ import SearchCareer from '../components/careerPage/SearchCareer'
 import Nav from '../components/Nav'
 
 const Career = () => {
+  const [careerSearch, setCareerSearch] = React.useState('')
   return (
     <div>
       <Nav />
       <CareerHero />
-      <SearchCareer />
-      <Oppertunities />
+      <SearchCareer careerSearch={careerSearch} setCareerSearch={setCareerSearch} />
+      <Oppertunities careerSearch={careerSearch} />
       <Footer />
     </div>
   )

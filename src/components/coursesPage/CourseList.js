@@ -2,7 +2,7 @@ import './CourseListStyles.css'
 import React, {useState} from 'react'
 import { FaBars, FaTimes } from 'react-icons/fa'
 
-const CourseList = () => {
+const CourseList = ({courseSearch}) => {
 
   const [click, setClick] = useState(false)
   const handleClick = () => setClick(!click)
@@ -30,9 +30,13 @@ const CourseList = () => {
     })
   }
 
+  const filteredCourses = courses.filter(item => 
+    item.name.toLowerCase().includes(courseSearch.toLowerCase()) 
+  );
+
   return (
     <div className='course-list'>
-        <div className={ click ? 'list-section active' : 'list-section' }>
+        {/* <div className={ click ? 'list-section active' : 'list-section' }>
             <input type='submit' name='all' className='course-btn' value='ALL' />
             <input type='submit' name='hs' className='course-btn' value='HS' />
             <input type='submit' name='hss' className='course-btn' value='HSS' />
@@ -47,8 +51,8 @@ const CourseList = () => {
               click ? 
                 (<FaTimes size={20} style={{ color:'#fff' }} />) : (<FaBars size={20} style={{ color:`var(--theemColor)` }} />)
             }
-        </div>
-        {courses.map((course, index)=> (
+        </div> */}
+        {filteredCourses.map((course, index)=> (
           <div class="list-group">
             <a href="#" class="list-group-item list-group-item-action">{course.name}</a>
           </div>
