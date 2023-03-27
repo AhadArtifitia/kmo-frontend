@@ -72,6 +72,10 @@ const EventUpdateModal = ({setUpdateEventModal, formValues, setFormValues, setEv
                         Category:
                         <input className='modal-body-from-input' type="text" id="category" name="category" value={formValues.category} onChange={handleChange} />
                     </label>
+                    <label htmlFor="description" className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" id="description" name="description" value={formValues.description} onChange={handleChange} />
+                    </label>
                     <label htmlFor="capacity" className='modal-body-from-label'>
                         Location:
                         <input className='modal-body-from-input' type="text" id="location" name="location" value={formValues.location} onChange={handleChange} />

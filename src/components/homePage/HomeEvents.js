@@ -31,22 +31,23 @@ const HomeEvents = () => {
 
   return (
     <div className='events'>
-        <div className='events-img'>
-            <img src={img} />
-        </div>
+        
             <Carousel controls={false}>
                 {events.map((event, index)=> (
                 <Carousel.Item>
-                    <div className='events-body'>
-                        <h4>Upcoming Events</h4>
-                        <h2>{event.title}</h2>
-                        <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33
-                            consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
-                        <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33
-                            consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p> 
-                        <p><BsCalendar3 size={20} style={{ color:'#fff' }} /> {event.datetime}</p>    
-                        {/* <Link to='#'>more events</Link> */}
-                    </div> 
+                    <div className='events-container'>
+                        <div className='events-img'>
+                            <img src={event.imageUrl} />
+                        </div>
+                        <div className='events-body'>
+                            <h4>Upcoming Events</h4>
+                            <h2>{event.title}</h2>
+                            <p>{event.description}</p> 
+                            <p><BsCalendar3 size={20} style={{ color:'#fff' }} /> {event.datetime}</p>    
+                            {/* <Link to='#'>more events</Link> */}
+                        </div> 
+                    </div>
+                    
                 </Carousel.Item>
                 ))}  
             </Carousel> 

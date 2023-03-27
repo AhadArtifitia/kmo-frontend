@@ -9,8 +9,10 @@ const EventAddModal = ({setAddEventModal, events, setEvents}) => {
         organizer: '',
         type: '',
         category: '',
+        description: '',
         location: '',
         datetime: '',
+        image: null,
     });
 
     const handleChange = e => {
@@ -18,25 +20,39 @@ const EventAddModal = ({setAddEventModal, events, setEvents}) => {
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
+    const handleImageChange = (e) => {
+        setFormData({
+          ...formData,
+          image: e.target.files[0],
+        });
+    };
+
     const handleSubmit = e => {
         e.preventDefault();
+        const data = new FormData();
+        data.append("title", formData.title);
+        data.append("organizer", formData.organizer);
+        data.append("type", formData.type);
+        data.append("category", formData.category);
+        data.append("description", formData.description);
+        data.append("location", formData.location);
+        data.append("datetime", formData.datetime);
+        data.append("image", formData.image);
 
-        fetch('https://backend.kmokoduvally.com/api/admin/event', {
+        const headers = {
+            Authorization: `Bearer ${token}`,
+        };
+
+        fetch('https://backend.kmokoduvally.com/api/admin/event', {  
           method: 'POST',
-          headers: { 
-            'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json' 
-        },
-          body: JSON.stringify(formData)
+          headers,
+          body: data, 
         })
-        .then((res) => {
+        .then((response) => response.json())
+        .then((data) => {
+            console.log(data);
+            // update existing table with new data
             setEvents([...events, formData]);
-        })
-        .then((res)=> {
-            console.log(res)
-            if(res?.token){
-                localStorage.setItem('token',res.token)
-            }
         })
         .catch(error => console.error(error));
 
@@ -75,12 +91,20 @@ const EventAddModal = ({setAddEventModal, events, setEvents}) => {
                         <input className='modal-body-from-input' type="text" name="category" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" name="description" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
                         Location:
                         <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
                         Datetime:
                         <input className='modal-body-from-input' type="text" name="datetime" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
+                        Image:
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>
