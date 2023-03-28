@@ -88,6 +88,14 @@
     text-align: justify;
 }
 
+@media screen and (min-width: 2000px) {
+    .institutions-img img {
+        height: 430px;
+    }
+}
+
+
+
 @media screen and (max-width: 1000px) {
     .institutions-top {
         flex-direction: column;
@@ -111,11 +119,12 @@
     }
 
     .institutions-img-overlay p{
-        font-size: 3vw;
+        font-size: 2vw;
     }
 
     .institutions-img img {
         width: 100%;
+        height: 310px;
     }
 
     .institutions-img, .institutions-title {
@@ -148,7 +157,7 @@
     .institutions-img img {
         width: 100%;
         /* height: auto; */
-        height: 180px;
+        height: 200px;
         background-size: cover;
         background-position: center;
         object-fit: cover;

@@ -24,8 +24,8 @@
 }
 
 .academic-section .academic-btn {
-    color: white;
-    background-color: var(--themeColor);
+    color: #000;
+    background-color: #fff;
     border: none;
     width: 18vw;
     height: 5vh;
@@ -33,16 +33,28 @@
     transition: 0.3s;
 }
 
+.academic-section .academic-radio {
+    width: 22px;
+}
+
 .academic-section .academic-btn:hover {
     color: #003B7B;
-    background-color: white;
+    background-color: #D9D9D9;
 }
 
 .academic-card-container {
-    padding: 1rem;
+    width: 80vw;
+    height: 32vh;
     color: white;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    padding: 1rem;
+}
+
+.academic-card-container .check {
+    width: 70vw;
 }
 
 .academic-card {

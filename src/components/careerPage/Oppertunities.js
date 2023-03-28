@@ -30,7 +30,6 @@ const Oppertunities = ({careerSearch}) => {
     item.level.toLowerCase().includes(careerSearch.toLowerCase()) 
   );
 
-
   return (
     <div className='oppertunities'>
         <p>Ready for your career in KMO Groups? You are just a click away now.</p>
