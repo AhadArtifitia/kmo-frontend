@@ -6,6 +6,7 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
     
     const [formData, setFormData] = React.useState({
         name: '',
+        level: '',
         department: '',
         duration: '',
         fees: '',
@@ -19,7 +20,7 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('https://backend.kmokoduvally.com/api/admin/course', {
+        fetch('https://backend.kmokoduvally.com/api/admin/course', { 
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,
@@ -58,6 +59,15 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
                     <label className='modal-body-from-label'>
                         Name:
                         <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
+                        Level:
+                        <input className='modal-body-from-radio' type="radio" name="level" value="hss" onChange={handleChange} />
+                        <label for="hss">HSS</label> <br/>
+                        <input className='modal-body-from-radio' type="radio" name="level" value="bachelors" onChange={handleChange} />
+                        <label for="bachelor">bachelors</label> <br/>
+                        <input className='modal-body-from-radio' type="radio" name="level" value="masters" onChange={handleChange} />
+                        <label for="masters">Masters</label>
                     </label>
                     <label className='modal-body-from-label'>
                         Department:

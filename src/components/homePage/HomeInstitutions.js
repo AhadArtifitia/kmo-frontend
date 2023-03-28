@@ -20,79 +20,40 @@ const HomeInstitutions = () => {
             },
         })
         .then((res)=>res.json())
-        .then((res)=>{
-        if(Array.isArray(res)&&res?.length>0){
-            setInstitutions(res)
-        }
+        .then(res => {
+            if(Array.isArray(res)&&res?.length>0){
+                setInstitutions(res)
+            }
+            const flexContainer = document.querySelector('.flex-container');
+        // .then((res)=>{
+        // if(Array.isArray(res)&&res?.length>0){
+        //     setInstitutions(res)
+        // }
         })
     }
   return (
     <div className='institutions'>
-        <div className='institutions-top'>
-            <div className='institutions-title'>
+
+        <div className='institutions-title'>
+            <div>
                 <h2>Institutions</h2>
-                <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
-            </div>
-            <div className='institutions-img'>
-                {institutions.map((institution,index)=>{
-                    if (institution.name === 'KMO Orphanage') {
-                        return <>
-                                    <img src={institution.imageUrl} alt='institutions image' />
-                                    <div className='institutions-img-overlay'>
-                                        <h5>{institution.name}</h5>
-                                        <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 
-                                            33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
-                                        <FaPhoneAlt size={20} style={{ color:'#fff', marginLeft:'0rem' }} />
-                                        <FaEnvelope size={20} style={{ color:'#fff', marginLeft:'1.5rem' }} />
-                                        <MdLocationOn size={20} style={{ color:'#fff', marginLeft:'1.5em' }} />
-                                    </div>
-                                </>
-                    }
-                        return null;      
-                })}
-                
+                <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33 
+                    consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
             </div>
         </div>
-        <br />
-        <div className='institutions-bottom'>
+
+        {institutions.map((institution,index) => (
             <div className='institutions-img'>
-                {institutions.map((institution,index)=>{
-                    if (institution.name === 'KMO Higher Secondary School') {
-                        return <>
-                                    <img src={institution.imageUrl} alt='institutions image' />
-                                    <div className='institutions-img-overlay'>
-                                        <h5>{institution.name}</h5>
-                                        <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 
-                                            33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
-                                        <FaPhoneAlt size={20} style={{ color:'#fff', marginLeft:'0rem' }} />
-                                        <FaEnvelope size={20} style={{ color:'#fff', marginLeft:'1.5rem' }} />
-                                        <MdLocationOn size={20} style={{ color:'#fff', marginLeft:'1.5em' }} />
-                                    </div>
-                                </>
-                    }
-                        return null;      
-                })}               
+                <img src={institution.imageUrl} alt='institutions image' />
+                <div className='institutions-img-overlay'>
+                    <h5>{institution.name}</h5>
+                    <p>{institution.description}</p>
+                    <FaPhoneAlt size={20} style={{ color:'#fff', marginLeft:'0rem' }} />
+                    <FaEnvelope size={20} style={{ color:'#fff', marginLeft:'1.5rem' }} />
+                    <MdLocationOn size={20} style={{ color:'#fff', marginLeft:'1.5em' }} />
+                </div>
             </div>
-            <div className='institutions-img'>
-                {institutions.map((institution,index)=>{
-                    if (institution.name === 'KMO Arts and Science College') {
-                        return <>
-                                    <img src={institution.imageUrl} alt='institutions image' />
-                                    <div className='institutions-img-overlay'>
-                                        <h5>{institution.name}</h5>
-                                        <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 
-                                            33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
-                                        <FaPhoneAlt size={20} style={{ color:'#fff', marginLeft:'0rem' }} />
-                                        <FaEnvelope size={20} style={{ color:'#fff', marginLeft:'1.5rem' }} />
-                                        <MdLocationOn size={20} style={{ color:'#fff', marginLeft:'1.5em' }} />
-                                    </div>
-                                </>
-                    }
-                        return null;      
-                })}
-                
-            </div>
-        </div>
+        ))}
     </div>
   )
 }

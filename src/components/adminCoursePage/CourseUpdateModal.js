@@ -60,6 +60,15 @@ const CourseUpdateModal = ({setUpdateCourseModal, formValues, setFormValues, set
                         Name:
                         <input className='modal-body-from-input' type="text" id="name" name="name" value={formValues.name} onChange={handleChange} required />
                     </label>
+                    <label htmlFor="level" className='modal-body-from-label'>
+                        Level:
+                        <input className='modal-body-from-radio' type="radio" id="level" name="level" value='hss' checked={formValues.level === 'hss' ? true : false} onChange={handleChange} />
+                        <label for="hss">HSS</label> <br/>
+                        <input className='modal-body-from-radio' type="radio" id="level" name="level" value='bachelors' checked={formValues.level === 'bachelors' ? true : false} onChange={handleChange} />
+                        <label for="bachelor">Bachelors</label> <br/>
+                        <input className='modal-body-from-radio' type="radio" id="level" name="level" value='masters' checked={formValues.level === 'masters' ? true : false} onChange={handleChange} />
+                        <label for="masters">Masters</label>
+                    </label>
                     <label htmlFor="hod" className='modal-body-from-label'>
                         Department:
                         <input className='modal-body-from-input' type="text" id="department" name="department" value={formValues.department} onChange={handleChange} />

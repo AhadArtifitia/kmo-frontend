@@ -5,16 +5,20 @@
     /* padding-top: 14vw; */
     width: 100%;
     margin: 0 auto;
-}
-
-.institutions-top {
+    /*  */
     display: flex;
+    flex-wrap: wrap;
     gap: 2rem;
 }
 
+/* .institutions-top {
+    display: flex;
+    gap: 2rem;
+} */
+
 .institutions-title {
     padding-right: 3rem;
-    width: 50%;
+    width: 48%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +26,7 @@
 }
 
 .institutions-title h2 {
-    font-size: 3.8vw;
+    font-size: 3vw;
 }
 
 .institutions-title p {
@@ -32,7 +36,9 @@
 
 .institutions-img {
     position: relative;
-    width: 50%;
+    width: 48%;
+    display: flex;
+    align-items: center;
 }
 
 .institutions-img img {
@@ -52,10 +58,10 @@
     object-fit: cover;
 }
 
-.institutions-bottom {
+/* .institutions-bottom {
     display: flex;
     gap: 2rem;
-}
+} */
 
 .institutions-img-overlay {
     padding: 2rem;
@@ -78,7 +84,7 @@
 }
 
 .institutions-img-overlay p{
-    font-size: 1.5vw;
+    font-size: 1vw;
     text-align: justify;
 }
 
