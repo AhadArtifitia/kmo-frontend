@@ -10,7 +10,7 @@ const FacultyMembers = () => {
 
   return (
     <div className='faculty-members'>
-        <div className={ click ? 'members-section active' : 'members-section' }>
+        {/* <div className={ click ? 'members-section active' : 'members-section' }>
             <input type='submit' name='hs' className='course-btn' value='HS' />
             <input type='submit' name='hss' className='course-btn' value='HSS' />
             <input type='submit' name='ba' className='course-btn' value='B.A' />
@@ -19,7 +19,7 @@ const FacultyMembers = () => {
             <input type='submit' name='bsc' className='course-btn' value='B.SC' />
             <input type='submit' name='bed' className='course-btn' value='B.Ed' />
             <input type='submit' name='iti' className='course-btn' value='ITI' />
-        </div>
+        </div> */}
         <div className='members-section-hamburger' onClick={ handleClick }>
             {
                 click ? 

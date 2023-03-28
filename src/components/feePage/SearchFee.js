@@ -3,14 +3,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { FaSearch } from 'react-icons/fa'
 
-const SearchFee = () => {
+const SearchFee = ({courseSearch, setCourseSearch}) => {
+    function handleSearch(event) {
+        setCourseSearch(event.target.value);
+    }
   return (
     <div className='fee-search-header'>
         <div className='box-container'>
             <table className='elements-container'>
                 <tr>
                     <td>
-                        <input type="text" placeholder='Search courses' className='search' />
+                        <input type="text" placeholder='Search courses' value={courseSearch} onChange={handleSearch} className='search' />
                     </td>
                     <td>
                         <Link to='#'>
