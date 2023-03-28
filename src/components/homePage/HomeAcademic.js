@@ -71,19 +71,19 @@ const HomeAcademic = () => {
                 33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
             <div className='academic-section'>
                 <label>
-                    <input type="radio" name="level" value="all" checked={level === 'all'} onChange={handleCategoryChange} />
+                    <input type="radio" name="level" value="all" checked={level === 'all'} onChange={handleCategoryChange} className='academic-section-radio' />
                     All
                 </label>
                 <label>
-                    <input type="radio" name="level" value="masters" checked={level === 'masters'} onChange={handleCategoryChange} />
+                    <input type="radio" name="level" value="masters" checked={level === 'masters'} onChange={handleCategoryChange} className='academic-section-radio' />
                     Masters
                 </label>
                 <label>
-                    <input type="radio" name="level" value="bachelors" checked={level === 'bachelors'} onChange={handleCategoryChange} />
+                    <input type="radio" name="level" value="bachelors" checked={level === 'bachelors'} onChange={handleCategoryChange} className='academic-section-radio' />
                     Bachelors
                 </label>
                 <label>
-                    <input type="radio" name="level" value="hss" checked={level === 'hss'} onChange={handleCategoryChange} />
+                    <input type="radio" name="level" value="hss" checked={level === 'hss'} onChange={handleCategoryChange} className='academic-section-radio' />
                     Hss
                 </label>
             </div>

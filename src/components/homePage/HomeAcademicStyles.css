@@ -33,8 +33,10 @@
     transition: 0.3s;
 }
 
-.academic-section .academic-radio {
-    width: 22px;
+.academic-section .academic-section-radio {
+    width: 52px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .academic-section .academic-btn:hover {
