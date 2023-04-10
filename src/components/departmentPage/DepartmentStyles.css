@@ -1,21 +1,21 @@
-.departments-school {
+.departments {
     padding: 7vw;
     background-color: var(--themeColor);
     display: flex;
 }
 
-.departments-school-img {
+.departments-img {
     width: 50%;
     display: flex;
     justify-content: center;
 }
 
-.departments-school-img img {
+.departments-img img {
     max-width: 60%;
     height: auto;
 }
 
-.departments-school-content {
+.departments-content {
     color: white;
     display: flex;
     flex-direction: column;
@@ -23,38 +23,42 @@
     max-width: 50%;
 }
 
-.departments-school-content-list {
+.departments-content-list {
     display: flex;
 }
 
+.white-space {
+    background: white;
+}
+
 @media screen and (min-width:1600px) {
-    .departments-school-content h2{
+    .departments-content h2{
         font-size: 3.8vw;
     }
 
-    .departments-school-content p{
+    .departments-content p{
         font-size: 1.3vw;
     }
 
-    .departments-school-content-list ul li{
+    .departments-content-list ul li{
         font-size: 1.3vw;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .departments-school {
+    .departments {
         flex-direction: column;
     }
 
-    .departments-school-content {
+    .departments-content {
         max-width: 100%;
     }
 
-    .departments-school-img {
+    .departments-img {
         width: 100%;
     }
 
-    .departments-school-img img {
+    .departments-img img {
         max-width: 70%;
     }
 }

@@ -6,6 +6,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
     
     const [formData, setFormData] = React.useState({
         name: '',
+        description: '',
         hod: '',
         courses: '',
         capacity: '',
@@ -19,7 +20,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('https://backend.kmokoduvally.com/api/admin/department', {
+        fetch('https://backend.kmokoduvally.com/api/admin/department', {  
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,
@@ -47,7 +48,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
 
   return (
     <div className='modalBackground'>
-        <div className='modalContainer'>
+        <div className='dep-modalContainer'>
             {/* <div className='titleCloseBtn'>
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
@@ -59,6 +60,10 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
                     <label className='modal-body-from-label'>
                         Name:
                         <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                    </label>
+                    <label className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
                         HOD:

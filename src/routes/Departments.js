@@ -1,21 +1,38 @@
 import React from 'react'
 import HomeFooter from '../components/Footer'
 import Nav from '../components/Nav'
-import DepartmentsOrphanage from '../components/institutionPage/Departments.js'
-import DepartmentsSchool from '../components/institutionPage/DepartmentsSchool.js'
-import DepartmentsCollege from '../components/institutionPage/DepartmentsCollege.js'
 import Blank from '../components/institutionPage/Blank.js'
+import Department from '../components/departmentPage/Department'
 
 const Departments = () => {
+  const [departments, setDepartments] = React.useState([])
+
+  const token = localStorage.getItem('token')
+
+  React.useEffect(()=>{
+    fetchAllDepartments()
+  },[])
+
+  const fetchAllDepartments=async()=>{
+    await fetch('https://backend.kmokoduvally.com/api/admin/department',{
+        method:'GET',
+        headers:{
+            'Authorization':`Bearer ${token}`,
+            'Content-Type': 'application/json'
+        },
+    })
+    .then((res)=>res.json())
+    .then((res)=>{
+      if(Array.isArray(res)&&res?.length>0){
+        setDepartments(res)
+      }
+    })
+  }
+
   return (
     <div>
         <Nav />
-        <DepartmentsOrphanage />
-        <Blank />
-        <DepartmentsSchool />
-        <Blank />
-        <DepartmentsCollege />
-        <Blank />
+        <Department departments={departments} />
         <HomeFooter />
     </div>
   )

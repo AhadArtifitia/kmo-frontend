@@ -48,7 +48,7 @@ const DepartmentUpdateModal = ({setUpdateDepModal, formValues, setFormValues, se
 
   return (
     <div className='modalBackground'>
-        <div className='modalContainer'>
+        <div className='dep-modalContainer'>
             {/* <div className='titleCloseBtn'>
                 <button className='titleClose-btn' onClick={ closeModal }>X</button>
             </div> */}
@@ -60,6 +60,10 @@ const DepartmentUpdateModal = ({setUpdateDepModal, formValues, setFormValues, se
                     <label htmlFor="name" className='modal-body-from-label'>
                         Name:
                         <input className='modal-body-from-input' type="text" id="name" name="name" value={formValues.name} onChange={handleChange} required />
+                    </label>
+                    <label htmlFor="description" className='modal-body-from-label'>
+                        Description:
+                        <textarea className='modal-body-from-input' rows='3' type="text" id="description" name='description' value={formValues.description} onChange={handleChange} />
                     </label>
                     <label htmlFor="hod" className='modal-body-from-label'>
                         HOD:

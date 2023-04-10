@@ -54,7 +54,7 @@ const CourseList = ({courseSearch}) => {
         </div> */}
         {filteredCourses.map((course, index)=> (
           <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">{course.name}</a>
+            <a href="/courses/english" class="list-group-item list-group-item-action">{course.name}</a>
           </div>
         ))}
           
