@@ -1,5 +1,6 @@
 import './HomeInstitutionsStyles.css'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 
@@ -48,9 +49,9 @@ const HomeInstitutions = () => {
                 <div className='institutions-img-overlay'>
                     <h5>{institution.name}</h5>
                     <p>{institution.description}</p>
-                    <FaPhoneAlt size={20} style={{ color:'#fff', marginLeft:'0rem' }} />
-                    <FaEnvelope size={20} style={{ color:'#fff', marginLeft:'1.5rem' }} />
-                    <MdLocationOn size={20} style={{ color:'#fff', marginLeft:'1.5em' }} />
+                    <a href={`tel:${institution.phone}`}><FaPhoneAlt size={20} className='institutions-img-overlay-icon' style={{ marginLeft:'0rem' }} /></a>
+                    <a href={`mailto:${institution.email}`}><FaEnvelope size={20} className='institutions-img-overlay-icon' style={{ marginLeft:'1.5rem' }} /></a>
+                    <Link to={institution.location}><MdLocationOn size={20} className='institutions-img-overlay-icon' style={{ marginLeft:'1.5em' }} /></Link>
                 </div>
             </div>
         ))}
