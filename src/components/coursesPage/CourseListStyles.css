@@ -10,25 +10,19 @@
     padding: 1rem;
 }
 
-.list-section .course-btn {
-    color: var(--themeColor);
-    background-color: white;
-    border: none;
-    width: 120px;
-    height: 40px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.list-section .course-btn:hover {
-    color: white;
-    background-color: var(--themeColor);
+.list-section .list-section-radio {
+    width: 52px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .list-section-hamburger {
     display: none;
 }
 
+.list-group {
+    padding: 5px 0;
+}
 
 
 @media screen and (min-width:1600px) {
