@@ -89,3 +89,4 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
 }
 
 export default DepartmentAddModal
+

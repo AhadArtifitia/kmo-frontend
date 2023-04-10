@@ -1,6 +1,6 @@
 import './DepartmentStyles.css'
 import React from 'react'
-import img from '../../images/dep.jpeg'
+import img from '../../images/dep.png'
 
 const Department = ({departments}) => {
   return (
@@ -10,7 +10,7 @@ const Department = ({departments}) => {
             <>
             <div className='departments'>
                 <div className='departments-img'>
-                    <img src={img} />
+                    <img src={img} alt="dep image" />
                 </div>
                 <div className='departments-content'>
                     <h2>{department.name}</h2>
