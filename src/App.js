@@ -23,6 +23,9 @@ import AdminCareer from './routes/admin/AdminCareer';
 import AdminEvents from './routes/admin/AdminEvents';
 import AdminBanner from './routes/admin/AdminBanner';
 import AdminDepartments from './routes/admin/AdminDepartments';
+import AdminAlumni from './routes/admin/AdminAlumni';
+import AdminGallery from './routes/admin/AdminGallery';
+
 
 
 function App() {
@@ -49,8 +52,10 @@ function App() {
         <Route path='/admin/course' element={<AdminCourse />} />
         <Route path='/admin/career' element={<AdminCareer />} />
         <Route path='/admin/event' element={<AdminEvents />} />
+        <Route path='/admin/alumni' element={<AdminAlumni />} />
         <Route path='/admin/banner' element={<AdminBanner />} />
         <Route path='/admin/department' element={<AdminDepartments />} />
+        <Route path='/admin/gallery' element={<AdminGallery />} />
 
       </Routes>
     </>

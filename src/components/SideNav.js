@@ -3,9 +3,10 @@ import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { FaRegBuilding } from 'react-icons/fa'
-import { BiBookContent } from 'react-icons/bi'
+import { BiBookContent, BiPhotoAlbum } from 'react-icons/bi'
 import { HiOutlinePhotograph } from 'react-icons/hi'
 import { RiBook3Line, RiSuitcaseLine, RiMedal2Line } from 'react-icons/ri'
+import { AiOutlineDeploymentUnit } from 'react-icons/ai'
 
 const SideNav = () => {
 
@@ -34,6 +35,14 @@ const SideNav = () => {
             <li>
                 <RiMedal2Line size={25} className='side-nav-logo' />
                 <Link to='/admin/event'>Events</Link>
+            </li>
+            <li>
+                <AiOutlineDeploymentUnit size={25} className='side-nav-logo' />
+                <Link to='/admin/alumni'>Alumni</Link>
+            </li>
+            <li>
+                <BiPhotoAlbum size={25} className='side-nav-logo' />
+                <Link to='/admin/gallery'>Gallery</Link>
             </li>
             <li>
                 <HiOutlinePhotograph size={25} className='side-nav-logo' />

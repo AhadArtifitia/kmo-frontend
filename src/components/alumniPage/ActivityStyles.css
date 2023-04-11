@@ -1,6 +1,7 @@
 .activity {
     background-color: white;
     padding: 7vw;
+    padding-bottom: 3vw;
     display: flex;
 }
 

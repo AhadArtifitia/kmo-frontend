@@ -1,0 +1,106 @@
+.admin-alumni-list-container {
+    width: 75vw;
+    height: 64vh;
+    position: absolute;
+    top: 36vh;
+    right: 0;
+}
+
+.admin-alumni-list {
+    padding: 3vw 7vw;
+    width: 100%;
+
+    max-height: 56vh;
+    overflow-y: scroll;
+}
+
+.admin-alumni-list table {
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-collapse: collapse;
+
+}
+
+.admin-alumni-list-thr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-alumni-list-tr {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #dddddd;
+    padding: 1rem 1rem;
+}
+
+.admin-alumni-list-td {
+    text-align: left;
+    width: 16vw;
+}
+
+.admin-alumni-list-th {
+    text-align: left;
+    width: 16vw;
+}
+
+.admin-alumni-list-logo {
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.admin-alumni-list-logo-trash {
+    color: red;
+    cursor: pointer;
+}
+
+.admin-alumni-list-thr3, .admin-alumni-list-thr2 {
+    display: none;
+}
+
+@media screen and (min-width:1600px) {
+    .admin-alumni-list-logo {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-alumni-list-logo-trash {
+        width: 2vw;
+        height: auto;
+    }
+
+    .admin-alumni-list-th, .admin-alumni-list-td {        
+        font-size: 1.5vw;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .admin-alumni-list-container {
+        width: 100vw;
+    }    
+}
+
+@media screen and (max-width:750px) {
+    .admin-alumni-list-thr {
+        display: none;
+    }
+
+    .admin-alumni-list-tr {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .admin-alumni-list-td {
+        width: 100%;
+        text-align: right;
+        position: relative;
+    }
+
+    .admin-alumni-list-td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+    }
+}
+

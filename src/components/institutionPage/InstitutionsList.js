@@ -23,10 +23,7 @@ const InstitutionsList = ({institutions, instSearch}) => {
                 </div>
             </div>
             </>
-        ))}
-        
-
-        
+        ))} 
     </div>
   )
 }
