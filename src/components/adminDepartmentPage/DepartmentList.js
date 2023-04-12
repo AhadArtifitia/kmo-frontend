@@ -67,12 +67,12 @@ const DepartmentList = ({setUpdateDepModal, depSearch, departments, setDefaultVa
                         <td className='admin-department-list-td' data-label='#'>{index+1}</td>
                         <td className='admin-department-list-td' data-label='ORGANDEPT. NAMEIZER'>{dep.name}</td>
                         <td className='admin-department-list-td' data-label='HEAD OF DEPT.'>{dep.hod}</td>
-                        {/* <select>
+                        <select>
                             {dep.courses.map((course)=> (
                                 <option value={course}>{course}</option>
                             ))}
-                        </select> */}
-                        <td className='admin-department-list-td' data-label='COURSES'>{dep.courses}</td>                       
+                        </select>
+                        {/* <td className='admin-department-list-td' data-label='COURSES'>{dep.courses}</td>                        */}
                         <td className='admin-department-list-td' data-label='STD. CAPACITY'>{dep.capacity}</td>
                         <td className='admin-event-list-td' data-label='EDIT'>
                             {/* <AiOutlineEye size={24} className='admin-department-list-logo' />  */}

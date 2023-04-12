@@ -14,7 +14,7 @@ const DepartmentUpdateModal = ({setUpdateDepModal, formValues, setFormValues, se
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`https://backend.kmokoduvally.com/api/admin/department/${defaultValues._id}`, {
+        fetch(`https://backend.kmokoduvally.com/api/admin/department/${defaultValues._id}`, {  
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,
@@ -69,10 +69,10 @@ const DepartmentUpdateModal = ({setUpdateDepModal, formValues, setFormValues, se
                         HOD:
                         <input className='modal-body-from-input' type="text" id="hod" name="hod" value={formValues.hod} onChange={handleChange} />
                     </label>
-                    <label htmlFor="courses" className='modal-body-from-label'>
+                    {/* <label htmlFor="courses" className='modal-body-from-label'>
                         Courses:
                         <input className='modal-body-from-input' type="text" id="courses" name="courses" value={formValues.courses} onChange={handleChange} />
-                    </label>
+                    </label> */}
                     <label htmlFor="capacity" className='modal-body-from-label'>
                         Capacity:
                         <input className='modal-body-from-input' type="number" id="capacity" name="capacity" value={formValues.capacity} onChange={handleChange} />

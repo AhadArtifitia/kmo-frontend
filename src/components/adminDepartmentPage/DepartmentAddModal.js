@@ -28,9 +28,9 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
         },
           body: JSON.stringify(formData)
         })
-        .then((res) => {
-            setDepartments([...departments, formData]);
-        })
+        // .then((res) => {
+        //     setDepartments([...departments, formData]);
+        // })
         .then((res)=> {
             console.log(res)
             if(res?.token){
@@ -71,7 +71,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
                     </label>
                     <label className='modal-body-from-label'>
                         Courses:
-                        <input className='modal-body-from-input' type="text" name="courses" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="courses" placeholder='seperate courses with comma' onChange={handleChange} />
                     </label>
                     <label className='modal-body-from-label'>
                         Capacity:
