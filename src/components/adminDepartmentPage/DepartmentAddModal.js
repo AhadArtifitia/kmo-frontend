@@ -8,7 +8,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
         name: '',
         description: '',
         hod: '',
-        courses: '',
+        courses: [],
         capacity: '',
     });
 
