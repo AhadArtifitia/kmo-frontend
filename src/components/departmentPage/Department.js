@@ -17,15 +17,10 @@ const Department = ({departments}) => {
                     <p>{department.description}</p>
                     <div className='departments-content-list'>
                         <ul>
-                            <li>csccscs</li>
-                            <li>ccwvvvsffz feaf</li>
-                        </ul>
-                        <ul>
-                            <li>efsccs svev</li>
-                            <li>cwce</li>
-                        </ul>
-                        <ul>
-                            <li>scscscsvv</li>
+                            {department.courses.map((course)=> (
+                                <li>{course}</li>
+                            ))}
+                            
                         </ul>
                     </div>
                 </div>
