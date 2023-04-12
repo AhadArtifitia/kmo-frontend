@@ -1,7 +1,7 @@
 import './GalleryBodyStyles.css'
 import React from 'react'
 import { AiOutlineCamera } from 'react-icons/ai'
-import { AiOutlineZoomIn } from 'react-icons/ai'
+import { AiOutlineZoomIn, AiOutlineZoomOut } from 'react-icons/ai'
 
 
 const GalleryBody = () => {
@@ -29,6 +29,12 @@ const GalleryBody = () => {
         })
     }
 
+    const [isPopupVisible, setIsPopupVisible] = React.useState(false);
+
+    function togglePopup() {
+        setIsPopupVisible(!isPopupVisible);
+    }
+
   return (
     <div className='gallery-body'>
         {/* <div className='gallery-section'>
@@ -39,17 +45,25 @@ const GalleryBody = () => {
         <div className='gallery-container'>
             <div className='gallery-row'>
                 {gallerys.map((gallery,index)=> ( 
+                    <>
                     <div className='gallery-row-img'>
-                        <img src={gallery.imageUrl} alt='gallery image' />
+                        <img id='gallery-img' src={gallery.imageUrl} alt='gallery image' />
                         <div className='gallery-img-overlay'>
                             <div className='overlay-zoomicon'>
-                                <AiOutlineZoomIn size={20} style={{ color:'#fff', cursor:'pointer' }} />
+                                <button onClick={togglePopup} className='overlay-zoomicon-btn'><AiOutlineZoomIn size={20} style={{ color:'#fff', cursor:'pointer' }} /></button>
                             </div>
                             <div className='overlay-cameraicon'>
                                 {/* <AiOutlineCamera size={20} style={{ color:'#fff' }} /> */}
                             </div>
                         </div>
                     </div>
+                    {isPopupVisible && (
+                        <div className="popup">
+                            <img src={gallery.imageUrl} alt='gallery image' />
+                            <button onClick={togglePopup}><AiOutlineZoomOut size={20} style={{ color:'#fff', cursor:'pointer' }} /></button>
+                        </div>
+                    )}
+                    </>
                 ))}
             </div>
         </div>

@@ -20,7 +20,7 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        fetch('https://backend.kmokoduvally.com/api/admin/department', {  
+        fetch('https://backend.kmokoduvally.com/api/admin/department', {   
           method: 'POST',
           headers: { 
             'Authorization':`Bearer ${token}`,

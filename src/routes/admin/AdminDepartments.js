@@ -20,7 +20,7 @@ const AdminDepartments = () => {
   },[])
 
   const fetchAllDepartment=async()=>{
-    await fetch('https://backend.kmokoduvally.com/api/admin/department',{
+    await fetch('https://backend.kmokoduvally.com/api/admin/department',{ 
         method:'GET',
         headers:{
             'Authorization':`Bearer ${token}`,

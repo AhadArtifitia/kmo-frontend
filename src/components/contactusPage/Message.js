@@ -11,7 +11,7 @@ const Message = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const data = { name, email, message };
-        fetch('https://backend.kmokoduvally.com/contact', {  //contact
+        fetch('https://backend.kmokoduvally.com/contact', {  //contact  
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
