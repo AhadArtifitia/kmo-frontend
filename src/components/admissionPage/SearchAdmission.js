@@ -9,7 +9,7 @@ const SearchAdmission = () => {
         <div className='search-h2'>
             <h2>Apply for Admission</h2>
         </div>
-        <div className='box-container'>
+        {/* <div className='box-container'>
             <table className='elements-container'>
                 <tr>
                     <td>
@@ -22,7 +22,7 @@ const SearchAdmission = () => {
                     </td>
                 </tr>
             </table>
-        </div>
+        </div> */}
     </div>
   )
 }

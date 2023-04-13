@@ -9,9 +9,17 @@
     justify-content: space-around;
 }
 
+.fee-structure-header h2 {
+    width: 190px;
+}
+
 .fee-body-row {
     display: flex;
     justify-content: space-around;
+}
+
+.fee-body-row p {
+    width: 190px;
 }
 
 @media screen and (min-width:1600px) {
