@@ -32,12 +32,25 @@ const Oppertunities = ({careerSearch}) => {
 
   return (
     <div className='oppertunities'>
-        <p>Ready for your career in KMO Groups? You are just a click away now.</p>
-        {filteredCourses.map((career,index)=>(
-          <div class="list-group p-1">
-            <a href="#" class="list-group-item list-group-item-secondary">{career.level}</a>
-          </div>
+        <h5>Ready for your career in KMO Groups? Forward your CV on <a href={`mailto:info.kmokoduvally@gmail.com`}>info.kmokoduvally@gmail.com</a>.</h5>
+  
+        <table className='oppertunities-table'>
+          <tr className='oppertunities-table-tr'>
+            <th>OPENINGS</th>
+            <th>LISTED DATE</th>
+          </tr>
+        
+        {filteredCourses.map((career,index)=>(   
+          <tr className='oppertunities-table-tr'>
+            <td>{career.level}</td>
+            <td>{career.updated}</td>
+          </tr>   
+          // <div class="list-group p-1">
+          //   <a href="#" class="list-group-item list-group-item-secondary">{career.level}</a>
+          // </div>
         ))}
+
+        </table>
     </div>
   )
 }

@@ -4,6 +4,24 @@
     padding-bottom: 7vw;
 }
 
+.oppertunities-table {
+    width: 100%;
+}
+
+.oppertunities-table-tr {
+    border-bottom: 1pt solid black;
+    height: 39px;
+    font-size: large;
+}
+
+.oppertunities-table-tr th{
+    width: 49%;
+}
+
+.oppertunities-table-tr td{
+    width: 49%;
+}
+
 
 @media screen and (min-width:1600px) {
 
