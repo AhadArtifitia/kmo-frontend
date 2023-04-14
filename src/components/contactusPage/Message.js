@@ -3,6 +3,9 @@ import React from 'react'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { MdLocationOn, MdRefresh } from 'react-icons/md'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Message = () => {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
@@ -23,6 +26,16 @@ const Message = () => {
                 console.log('error');
             }else {
                 console.log('Email sent successfully');
+                toast.success('Message sent successfully!', {
+                    position: "top-right",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
                 setName('')
                 setEmail('')
                 setMessage('')
@@ -73,6 +86,7 @@ const Message = () => {
                 </div>
             </div>
         </div>
+        <ToastContainer />
     </div>
   )
 }
