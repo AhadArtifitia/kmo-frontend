@@ -25,6 +25,15 @@
     cursor: pointer;
 }
 
+.heroV2-header-a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.heroV2-header-a:hover {
+    color: rgb(72, 131, 186);
+}
+
 .heroV2-header-button {
     background-color: #fff;
     border: none;

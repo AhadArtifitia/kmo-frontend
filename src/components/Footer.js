@@ -64,13 +64,20 @@ const HomeFooter = () => {
             <h4>Contact Us</h4>
             <div className='contact-phone'>
                 <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'0rem' }} />
-                <p>O495 2211311 <br />
+                <div className='contact-phone-a'>
+                <a className='heroV2-header-a anchor' href={`tell:O495 2211311`}> O495 2211311</a> 
+                <a className='heroV2-header-a anchor' href={`tell:9895111396`}> 9895111396</a> 
+                <a className='heroV2-header-a anchor' href={`tell:9497033555`}> 9497033555</a> 
+                </div>
+
+                {/* <p>O495 2211311 <br />
                 9895111396 <br />
-                9497033555</p>
+                9497033555</p> */}
             </div>
             <div className='contact-email'>
                 <FaEnvelope size={20} style={{ color:'#fff', marginTop:'0rem' }} />
-                <p>edu@kmokoduvally.com</p>
+                {/* <p>edu@kmokoduvally.com</p> */}
+                <a className='heroV2-header-a anchor' href={`mailto:edu@kmokoduvally.com`}> edu@kmokoduvally.com</a>
             </div>
             <div className='contact-address'>
                 <MdLocationOn size={24} style={{ color:'#fff', marginTop:'0rem' }} />
