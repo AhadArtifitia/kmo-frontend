@@ -9,6 +9,7 @@ import HomeStudents from '../components/homePage/HomeStudents'
 import HomeFeatures from '../components/homePage/HomeFeatures'
 import HomeAttribute from '../components/homePage/HomeAttribute'
 import HeroV2 from '../components/homePage/HeroV2'
+import ScrollButton from './ScrollButton'
 
 const First = () => {
   return (
@@ -23,6 +24,8 @@ const First = () => {
         <HomeStudents />
         <HomeAttribute />
         <HomeFooter />
+        <ScrollButton />
+        
     </div>
   )
 }

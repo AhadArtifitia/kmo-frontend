@@ -6,6 +6,7 @@ import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 
 const HomeFooter = () => {
+    
   return (
     <div className='footer'>
         <div className='footer-body'>
@@ -86,6 +87,7 @@ const HomeFooter = () => {
                     Kozhikode, Kerala, INDIA</p>
             </div>
         </div>
+        
     </div>
   )
 }
