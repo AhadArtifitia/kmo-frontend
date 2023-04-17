@@ -32,7 +32,7 @@ const Oppertunities = ({careerSearch}) => {
 
   return (
     <div className='oppertunities'>
-        <h5>Ready for your career in KMO Groups? Forward your CV on <a href={`mailto:info.kmokoduvally@gmail.com`}>info.kmokoduvally@gmail.com</a>.</h5>
+        <h5>Ready for your career in KMO Groups? Fill in the <a href={`https://docs.google.com/forms/d/e/1FAIpQLSfm_MDHQinnYyMgfcD2hBaaibw00605hIR29FGkMVG7pioxog/viewform?vc=0&c=0&w=1&flr=0`}>form</a> to apply.</h5>
   
         <table className='oppertunities-table'>
           <tr className='oppertunities-table-tr'>
