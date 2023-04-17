@@ -65,9 +65,9 @@ const HomeFooter = () => {
             <div className='contact-phone'>
                 <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'0rem' }} />
                 <div className='contact-phone-a'>
-                <a className='heroV2-header-a anchor' href={`tell:O495 2211311`}> O495 2211311</a> 
-                <a className='heroV2-header-a anchor' href={`tell:9895111396`}> 9895111396</a> 
-                <a className='heroV2-header-a anchor' href={`tell:9497033555`}> 9497033555</a> 
+                <a className='heroV2-header-a anchor' href={`tel:O495 2211311`}> O495 2211311</a> 
+                <a className='heroV2-header-a anchor' href={`tel:9895111396`}> 9895111396</a> 
+                <a className='heroV2-header-a anchor' href={`tel:9497033555`}> 9497033555</a> 
                 </div>
 
                 {/* <p>O495 2211311 <br />

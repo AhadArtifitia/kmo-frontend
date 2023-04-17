@@ -82,27 +82,27 @@ const InstitutionModal = ({ setInstModal, setObjects, objects }) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Name:
-                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Description:
-                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} />
+                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Phone:
-                        <input className='modal-body-from-input' type="text" name="phone" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="phone" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Email:
-                        <input className='modal-body-from-input' type="email" name="email" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="email" name="email" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Location:
-                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Image:
-                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={ closeModal } >Cancel</button>

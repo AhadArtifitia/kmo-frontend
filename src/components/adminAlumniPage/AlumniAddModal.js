@@ -66,15 +66,15 @@ const AlumniAddModal = ({setAddAlumniModal, alumnis, setAlumnis}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Name:
-                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Description:
-                        <textarea className='modal-body-from-input' rows='3' type="text" name="description" onChange={handleChange} />
+                        <textarea className='modal-body-from-input' rows='3' type="text" name="description" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Image:
-                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

@@ -59,23 +59,23 @@ const DepartmentAddModal = ({setAddDepModal, departments, setDepartments}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Name:
-                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Description:
-                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} />
+                        <textarea className='modal-body-from-input' rows='3' type="text" name='description'  onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         HOD:
-                        <input className='modal-body-from-input' type="text" name="hod" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="hod" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Courses:
-                        <input className='modal-body-from-input' type="text" name="courses" placeholder='seperate courses with comma' onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="courses" placeholder='seperate courses with comma' onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Capacity:
-                        <input className='modal-body-from-input' type="number" name="capacity" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="number" name="capacity" onChange={handleChange} required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

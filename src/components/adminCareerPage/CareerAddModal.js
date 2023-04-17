@@ -59,23 +59,23 @@ const CareerAddModal = ({setAddCareerModal, careers, setCareers}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Department:
-                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Level:
-                        <input className='modal-body-from-input' type="text" name="level" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="level" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Type:
-                        <input className='modal-body-from-input' type="text" name="type" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="type" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Experience:
-                        <input className='modal-body-from-input' type="text" name="experience" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="experience" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Updated:
-                        <input className='modal-body-from-input' type="date" name="updated" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="date" name="updated" onChange={handleChange} required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

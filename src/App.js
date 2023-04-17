@@ -25,6 +25,7 @@ import AdminBanner from './routes/admin/AdminBanner';
 import AdminDepartments from './routes/admin/AdminDepartments';
 import AdminAlumni from './routes/admin/AdminAlumni';
 import AdminGallery from './routes/admin/AdminGallery';
+import Error from './routes/Error';
 
 
 
@@ -56,6 +57,7 @@ function App() {
         <Route path='/admin/banner' element={<AdminBanner />} />
         <Route path='/admin/department' element={<AdminDepartments />} />
         <Route path='/admin/gallery' element={<AdminGallery />} />
+        <Route path='*' element={<Error />} />
 
       </Routes>
     </>

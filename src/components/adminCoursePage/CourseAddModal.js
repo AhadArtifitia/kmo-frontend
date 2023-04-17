@@ -12,6 +12,8 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
         fees: '',
     });
 
+    // const [selectedOption, setSelectedOption] = React.useState("bachelors");
+
     const handleChange = e => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
@@ -58,28 +60,28 @@ const CourseAddModal = ({setAddCourseModal, courses, setCourses}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Name:
-                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="name" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Level:
-                        <input className='modal-body-from-radio' type="radio" name="level" value="hss" onChange={handleChange} />
+                        <input className='modal-body-from-radio' type="radio" name="level" value="hss" onChange={handleChange} required  />
                         <label for="hss">HSS</label> <br/>
-                        <input className='modal-body-from-radio' type="radio" name="level" value="bachelors" onChange={handleChange} />
+                        <input className='modal-body-from-radio' type="radio" name="level" value="bachelors" onChange={handleChange} required />
                         <label for="bachelor">bachelors</label> <br/>
-                        <input className='modal-body-from-radio' type="radio" name="level" value="masters" onChange={handleChange} />
+                        <input className='modal-body-from-radio' type="radio" name="level" value="masters" onChange={handleChange} required />
                         <label for="masters">Masters</label>
                     </label>
                     <label className='modal-body-from-label'>
                         Department:
-                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="department" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Duration:
-                        <input className='modal-body-from-input' type="text" name="duration" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="duration" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Fees:
-                        <input className='modal-body-from-input' type="number" name="fees" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="number" name="fees" onChange={handleChange} required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

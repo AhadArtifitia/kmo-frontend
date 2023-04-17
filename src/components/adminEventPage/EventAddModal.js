@@ -76,35 +76,35 @@ const EventAddModal = ({setAddEventModal, events, setEvents}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='modal-body-from-label'>
                         Title:
-                        <input className='modal-body-from-input' type="text" name="title" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="title" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Organizer:
-                        <input className='modal-body-from-input' type="text" name="organizer" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="organizer" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Type:
-                        <input className='modal-body-from-input' type="text" name="type" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="type" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Category:
-                        <input className='modal-body-from-input' type="text" name="category" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="category" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Description:
-                        <textarea className='modal-body-from-input' rows='3' type="text" name="description" onChange={handleChange} />
+                        <textarea className='modal-body-from-input' rows='3' type="text" name="description" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Location:
-                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="location" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Datetime:
-                        <input className='modal-body-from-input' type="text" name="datetime" onChange={handleChange} />
+                        <input className='modal-body-from-input' type="text" name="datetime" onChange={handleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         Image:
-                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>

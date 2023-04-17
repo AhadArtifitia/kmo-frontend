@@ -58,11 +58,11 @@ const BannerAddModal = ({setAddBannerModal}) => {
                 <form onSubmit={handleSubmit} className='modal-body-from'>
                     <label className='banner-modal-body-from-label'>
                         Title:
-                        <input className='modal-body-from-input' type="text" name="title" value={title} onChange={handleTitleChange} />
+                        <input className='modal-body-from-input' type="text" name="title" value={title} onChange={handleTitleChange} required />
                     </label>
                     <label className='modal-body-from-label'>
                         testImages:
-                        <input className='modal-body-from-input' type="file" name="testImages" accept="image/png, image/jpeg" onChange={handleImageChange} />
+                        <input className='modal-body-from-input' type="file" name="testImages" accept="image/png, image/jpeg" onChange={handleImageChange} required />
                     </label>
                     <div className='modal-footer'>
                         <button type="submit" className='modalFooter-btn' id='cancelBtn' onClick={popModal} >Cancel</button>
