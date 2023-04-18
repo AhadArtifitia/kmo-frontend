@@ -26,7 +26,7 @@ const AlumniList = ({alumnis, setUpdateAlumniModal, setAlumnis, setFormValues, s
     const handleDeleteClick = (objId) => {
         const confirmBox = window.confirm("Confirm to delete this alumni?")
         if (confirmBox === true) {
-            fetch(`https://backend.kmokoduvally.com/api/admin/alumni/${objId}`,{  
+            fetch(`https://backend.kmokoduvally.com/api/admin/alumni/${objId}`,{   
                 method:'DELETE',
                 headers:{
                     'Authorization':`Bearer ${token}`,
