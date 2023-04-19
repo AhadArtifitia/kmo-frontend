@@ -19,7 +19,7 @@ const HomeStudents = () => {
             </div>
         </div>
         <div className='students-body'>
-            <h2>Student's cornor</h2>
+            <h2>Student's corner</h2>
             <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo 
                 ut praesentium quidem 33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
             <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo 
