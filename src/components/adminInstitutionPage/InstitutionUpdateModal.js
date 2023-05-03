@@ -12,15 +12,34 @@ const InstitutionUpdateModal = ({setUpdateInstModal, defaultValues, setDefaultVa
         });
     }
 
+    const [formData, setFormData] = React.useState({
+      image: null,
+    });
+    
+    const handleImageChange = (e) => {
+      setFormData({
+        ...formData,
+        image: e.target.files[0],
+      });
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch(`https://backend.kmokoduvally.com/api/admin/institution/${defaultValues._id}`, {
+        const data = new FormData();
+        data.append("name", formValues.name);
+        data.append("description", formValues.description);
+        data.append("email", formValues.email);
+        data.append("phone", formValues.phone);
+        data.append("location", formValues.location);
+        data.append("image", formData.image);
+
+        fetch(`http://localhost:8000/api/admin/institution/${defaultValues._id}`, { //https://backend.kmokoduvally.com/api/admin/institution/${defaultValues._id}
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/json'
             },
-          body: JSON.stringify(formValues)
+          body:  data,  //JSON.stringify(formValues),
         })
         .then(response => {
             // update table data
@@ -76,6 +95,10 @@ const InstitutionUpdateModal = ({setUpdateInstModal, defaultValues, setDefaultVa
                     <label htmlFor="location" className='modal-body-from-label'>
                         Location:
                         <input className='modal-body-from-input' type="text" id="location" name="location" value={formValues.location} onChange={handleChange} />
+                    </label>
+                    <label htmlFor="image" className='modal-body-from-label'>
+                        Change Image:
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
                     </label>
                     <div className='modal-footer'>
                         <button type="reset" className='modalFooter-btn' id='cancelBtn' onClick={ closeModal } >Cancel</button>
