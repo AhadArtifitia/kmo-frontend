@@ -33,7 +33,7 @@ const InstitutionUpdateModal = ({setUpdateInstModal, defaultValues, setDefaultVa
         data.append("location", formValues.location);
         data.append("image", formData.image);
 
-        fetch(`http://localhost:8000/api/admin/institution/${defaultValues._id}`, { //https://backend.kmokoduvally.com/api/admin/institution/${defaultValues._id}
+        fetch(`https://backend.kmokoduvally.com/api/admin/institution/${defaultValues._id}`, { 
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,
