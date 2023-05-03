@@ -12,15 +12,31 @@ const AlumniUpdateModal = ({setUpdateAlumniModal, formValues, setFormValues, set
         });
     }
 
+    const [formData, setFormData] = React.useState({
+      image: null,
+    });
+    
+    const handleImageChange = (e) => {
+      setFormData({
+        ...formData,
+        image: e.target.files[0],
+      });
+    };
+
     const handleSubmit = (alumni) => {
         alumni.preventDefault();
-        fetch(`https://backend.kmokoduvally.com/api/admin/alumni/${defaultValues._id}`, { 
+        const data = new FormData();
+        data.append("name", formValues.name);
+        data.append("description", formValues.description);
+        data.append("image", formData.image);
+
+        fetch(`https://backend.kmokoduvally.com/api/admin/alumni/${defaultValues._id}`, {  
           method: 'PUT',
           headers:{
             'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/json'
             },
-          body: JSON.stringify(formValues)
+          body: data, //JSON.stringify(formValues)
         })
         .then(response => {
             // update table data
@@ -64,6 +80,10 @@ const AlumniUpdateModal = ({setUpdateAlumniModal, formValues, setFormValues, set
                     <label htmlFor="description" className='modal-body-from-label'>
                         Description:
                         <textarea className='modal-body-from-input' rows='3' type="text" id="description" name="description" value={formValues.description} onChange={handleChange} />
+                    </label>
+                    <label htmlFor="image" className='modal-body-from-label'>
+                        Change Image:
+                        <input className='modal-body-from-input' type="file" name="image" onChange={handleImageChange} accept="image/*" />
                     </label>
                     <div className='modal-footer'>
                         <button type="reset" className='modalFooter-btn' id='cancelBtn' onClick={ popModal } >Cancel</button>
