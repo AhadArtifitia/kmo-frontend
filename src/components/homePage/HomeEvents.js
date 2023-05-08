@@ -40,8 +40,8 @@ const HomeEvents = () => {
                             <img src={event.imageUrl} />
                         </div>
                         <div className='events-body'>
-                            <h4>Upcoming Events</h4>
-                            <h2>{event.title}</h2>
+                            <h5>Upcoming Events</h5>
+                            <h4>{event.title}</h4>
                             <p>{event.description}</p> 
                             <p><BsCalendar3 size={20} style={{ color:'#fff' }} /> {event.datetime}</p>    
                             {/* <Link to='#'>more events</Link> */}
