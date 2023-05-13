@@ -402,3 +402,8 @@ nav a {
     }
 }
 
+@media screen and (max-height: 650px) {
+    .heroV2-title-btn {
+        display: none;
+    }
+}
