@@ -74,15 +74,15 @@ const Message = () => {
             <div className='phone'>
                 <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'5px' }} />
                 <div>
-                    <p>+91 9895111396 <br />
-                    +91 9497033555 <br />
-                    O495 2211311</p>
+                    <p>+91 8078796228 <br />
+                    O495 2210306 <br />
+                    O495 2210228</p>
                 </div>
             </div>
             <div className='email'>
                 <FaEnvelope size={20} style={{ color:'#fff' }} />
                 <div>
-                    <p className='foo-p'>edu@kmokoduvally.com</p>
+                    <p className='foo-p'>kmokoduvally@gmail.com</p>
                 </div>
             </div>
         </div>

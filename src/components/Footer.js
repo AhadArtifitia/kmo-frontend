@@ -66,9 +66,9 @@ const HomeFooter = () => {
             <div className='contact-phone'>
                 <FaPhoneAlt size={20} style={{ color:'#fff', marginTop:'0rem' }} />
                 <div className='contact-phone-a'>
-                <a className='heroV2-header-a anchor' href={`tel:O495 2211311`}> O495 2211311</a> 
-                <a className='heroV2-header-a anchor' href={`tel:9895111396`}> 9895111396</a> 
-                <a className='heroV2-header-a anchor' href={`tel:9497033555`}> 9497033555</a> 
+                <a className='heroV2-header-a anchor' href={`tel:8078796228`}> 8078796228</a> 
+                <a className='heroV2-header-a anchor' href={`tel:O495 2210306`}> O495 2210306</a> 
+                <a className='heroV2-header-a anchor' href={`tel:O495 2210228`}> O495 2210228</a> 
                 </div>
 
                 {/* <p>O495 2211311 <br />
@@ -78,7 +78,7 @@ const HomeFooter = () => {
             <div className='contact-email'>
                 <FaEnvelope size={20} style={{ color:'#fff', marginTop:'0rem' }} />
                 {/* <p>edu@kmokoduvally.com</p> */}
-                <a className='heroV2-header-a anchor' href={`mailto:edu@kmokoduvally.com`}> edu@kmokoduvally.com</a>
+                <a className='heroV2-header-a anchor' href={`mailto:kmokoduvally@gmail.com`}> kmokoduvally@gmail.com</a>
             </div>
             <div className='contact-address'>
                 <MdLocationOn size={24} style={{ color:'#fff', marginTop:'0rem' }} />
