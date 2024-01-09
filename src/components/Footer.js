@@ -1,7 +1,7 @@
 import './FooterStyles.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../images/kmoLogoW.png'
+import logo from '../images/kmoLogoC.png'
 import { FaPhoneAlt, FaEnvelope } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
 

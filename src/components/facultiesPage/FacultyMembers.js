@@ -26,7 +26,7 @@ const FacultyMembers = () => {
                     (<FaTimes size={20} style={{ color:'#fff' }} />) : (<FaBars size={20} style={{ color:`var(--themeColor)` }} />)
             }
         </div>
-        <div className='mentor-container'>
+        {/* <div className='mentor-container'>
             <div className='mentor-card'>
                 <img className='mentor-img' src={image} alt='mentor image' />
                 <div className='mentor-details'>
@@ -85,7 +85,7 @@ const FacultyMembers = () => {
                     <p>Mentor</p>
                 </div>
             </div>      
-        </div>
+        </div> */}
     </div>
   )
 }

@@ -5,7 +5,7 @@ import Carousel from 'react-bootstrap/Carousel'
 import Slider from "react-slick";
 import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
 import { MdLocationOn } from 'react-icons/md'
-import logo from '../../images/kmoLogoB.png'
+import logo from '../../images/kmoLogoC.png'
 
 const HeroV2 = () => {
     var settings = {
