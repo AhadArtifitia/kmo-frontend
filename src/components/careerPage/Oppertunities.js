@@ -1,58 +1,76 @@
-import './OppertunitiesStyles.css'
-import React from 'react'
+import "./OppertunitiesStyles.css";
+import React from "react";
 
-const Oppertunities = ({careerSearch}) => {
+const Oppertunities = ({ careerSearch }) => {
+  const [careers, setCareers] = React.useState([]);
+  const token = localStorage.getItem("token");
 
-  const [careers, setCareers] = React.useState([])
-  const token = localStorage.getItem('token')
+  React.useEffect(() => {
+    fetchAllCareer();
+  }, []);
 
-  React.useEffect(()=>{
-    fetchAllCareer()
-  },[])
-
-  const fetchAllCareer=async()=>{
-    await fetch('https://backend.kmokoduvally.com/api/admin/career',{
-        method:'GET',
-        headers:{
-            'Authorization':`Bearer ${token}`,
-            'Content-Type': 'application/json'
-        },
+  const fetchAllCareer = async () => {
+    await fetch("https://backend.kmokoduvally.com/api/admin/career", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
     })
-    .then((res)=>res.json())
-    .then((res)=>{
-      if(Array.isArray(res)&&res?.length>0){
-        setCareers(res)
-      }
-    })
-  }
+      .then((res) => res.json())
+      .then((res) => {
+        if (Array.isArray(res) && res?.length > 0) {
+          setCareers(res);
+        }
+      });
+  };
 
-  const filteredCourses = careers.filter(item => 
-    item.level.toLowerCase().includes(careerSearch.toLowerCase()) 
+  const filteredCourses = careers.filter((item) =>
+    item.level.toLowerCase().includes(careerSearch.toLowerCase())
   );
 
   return (
-    <div className='oppertunities'>
-        <h5>Ready for your career in KMO Groups? Fill in the <a href={`https://docs.google.com/forms/d/e/1FAIpQLSfm_MDHQinnYyMgfcD2hBaaibw00605hIR29FGkMVG7pioxog/viewform?vc=0&c=0&w=1&flr=0`}>form</a> to apply.</h5>
-  
-        <table className='oppertunities-table'>
-          <tr className='oppertunities-table-tr'>
-            <th>OPENINGS</th>
-            <th>LISTED DATE</th>
-          </tr>
-        
-        {filteredCourses.map((career,index)=>(   
-          <tr className='oppertunities-table-tr'>
+    <div className="oppertunities">
+      <span style={{ display: "inline-block", textAlign: "left" }}>
+        <h5 style={{ display: "inline-block", marginRight: "10px" }}>
+          Fill in the form below to apply for your career in KMO Groups.
+        </h5>
+        <button
+          style={{
+            backgroundColor: "#007bff",
+            color: "#ffffff",
+            border: "none",
+            padding: "10px 20px",
+            borderRadius: "5px",
+            cursor: "pointer",
+          }}
+          onClick={() =>
+            (window.location.href =
+              "https://docs.google.com/forms/d/e/1FAIpQLSfm_MDHQinnYyMgfcD2hBaaibw00605hIR29FGkMVG7pioxog/viewform?vc=0&c=0&w=1&flr=0")
+          }
+        >
+          Apply Now
+        </button>
+      </span>
+
+      <table className="oppertunities-table">
+        <tr className="oppertunities-table-tr">
+          <th>OPENINGS</th>
+          <th>LISTED DATE</th>
+        </tr>
+
+        {filteredCourses.map((career, index) => (
+          <tr className="oppertunities-table-tr">
             <td>{career.level}</td>
             <td>{career.updated}</td>
-          </tr>   
+          </tr>
           // <div class="list-group p-1">
           //   <a href="#" class="list-group-item list-group-item-secondary">{career.level}</a>
           // </div>
         ))}
-
-        </table>
+      </table>
     </div>
-  )
-}
+  );
+};
 
-export default Oppertunities
+export default Oppertunities;

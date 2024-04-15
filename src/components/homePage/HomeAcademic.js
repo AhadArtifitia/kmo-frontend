@@ -68,8 +68,8 @@ const HomeAcademic = () => {
     <div className='academic'>
         <div className='academic-body'>
             <h2>Academic Programs</h2>
-            <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 
-                33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
+            {/* <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 
+                33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p> */}
             <div className='academic-section'>
                 <label>
                     <input type="radio" name="level" value="all" checked={level === 'all'} onChange={handleCategoryChange} className='academic-section-radio' />

@@ -11,7 +11,7 @@ const HomeFooter = () => {
     <div className='footer'>
         <div className='footer-body'>
             <img src={logo}  alt='logo' />
-            <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p>
+            {/* <p>Lorem ipsum dolor sit amet. Sed impedit quaerat id velit explicabo ut praesentium quidem 33 consequatur vero et maiores distinctio est numquam dolorem et quia voluptatum.</p> */}
         </div>
         <div className='footer-links'>
             <h4>Quick Links</h4>
