@@ -1,51 +1,58 @@
 import React from "react";
 import Modal from "react-modal";
-import styled from "styled-components";
-
-const StyledModal = styled(Modal)`
-  overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 20px;
-    width: 80%;
-    max-width: 400px;
-    margin: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-`;
-
-const CloseButton = styled.button`
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 20px;
-  color: #555;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-`;
+import img from "../../images/2024.jpg";
 
 const ImagePopup = ({ show, handleClose }) => {
+  const closeButtonStyle = {
+    position: "absolute",
+    top: "10px",
+    right: "10px",
+    background: "none",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "30px",
+    color: "#fff",
+  };
+
   return (
-    <StyledModal isOpen={show} onRequestClose={handleClose} contentLabel="Image Popup">
-      <CloseButton onClick={handleClose}>×</CloseButton>
-      <img src="../../images/2024.jpg" alt="Popup Image" />
-    </StyledModal>
+    <Modal
+      isOpen={show}
+      onRequestClose={handleClose}
+      contentLabel="Image Popup"
+      style={{
+        content: {
+          backgroundColor: "transparent",
+          border: "none",
+          padding: 0,
+          width: "auto",
+          maxWidth: "80vw", 
+          height: "auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+        },
+        overlay: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        },
+      }}
+    >
+      <button style={closeButtonStyle} onClick={handleClose}>
+        ×
+      </button>
+      <img
+        src={img}
+        alt="Popup Image"
+        style={{
+          maxWidth: "60%",
+          maxHeight: "60%",
+        }}
+        className="popup-image"
+      />
+    </Modal>
   );
 };
 
