@@ -13,7 +13,6 @@ import {
 } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import logo from "../../images/kmoLogoC.png";
-import ImagePopup from "../popup/ImagePopup";
 
 const HeroV2 = () => {
   var settings = {
@@ -48,13 +47,11 @@ const HeroV2 = () => {
 
   const [banners, setBanners] = React.useState([]);
   const token = localStorage.getItem("token");
-//   const [showPopup, setShowPopup] = React.useState(true);
+  //   const [showPopup, setShowPopup] = React.useState(true);
 
- 
-
-//   const handleClosePopup = () => {
-//     setShowPopup(false);
-//   };
+  //   const handleClosePopup = () => {
+  //     setShowPopup(false);
+  //   };
   React.useEffect(() => {
     fetchAllBanner();
   }, []);
@@ -132,9 +129,11 @@ const HeroV2 = () => {
       </div>
 
       <header>
-        <container className="img-co">
-          <img className="logo" src={logo} alt="logo" />
-        </container>
+        <div className="img-co">
+          <Link to="/">
+            <img className="logo" src={logo} alt="logo" />
+          </Link>
+        </div>
         <input type="checkbox" id="nav-toggle" className="nav-toggle" />
         <nav>
           <ul>
