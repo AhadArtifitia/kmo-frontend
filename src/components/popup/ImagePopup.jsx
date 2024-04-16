@@ -1,17 +1,19 @@
 import React from "react";
 import Modal from "react-modal";
+import { AiOutlineClose } from "react-icons/ai"; 
 import img from "../../images/2024.jpg";
 
 const ImagePopup = ({ show, handleClose }) => {
   const closeButtonStyle = {
     position: "absolute",
-    top: "10px",
-    right: "10px",
-    background: "none",
+    top: "20px", // Adjust top position as needed
+    right: "5px", // Adjust right position as needed
     border: "none",
     cursor: "pointer",
-    fontSize: "30px",
+    fontSize: "40px",
     color: "#fff",
+    zIndex: "1", 
+    background: "none", 
   };
 
   return (
@@ -25,7 +27,7 @@ const ImagePopup = ({ show, handleClose }) => {
           border: "none",
           padding: 0,
           width: "auto",
-          maxWidth: "80vw", 
+          maxWidth: "70vw", 
           height: "auto",
           display: "flex",
           alignItems: "center",
@@ -40,9 +42,6 @@ const ImagePopup = ({ show, handleClose }) => {
         },
       }}
     >
-      <button style={closeButtonStyle} onClick={handleClose}>
-        ×
-      </button>
       <img
         src={img}
         alt="Popup Image"
@@ -52,6 +51,7 @@ const ImagePopup = ({ show, handleClose }) => {
         }}
         className="popup-image"
       />
+      <AiOutlineClose style={{ ...closeButtonStyle,left:"80%" }} onClick={handleClose} />
     </Modal>
   );
 };
